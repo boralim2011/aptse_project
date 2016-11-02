@@ -1,4 +1,4 @@
-﻿/*
+/*
 SQLyog Enterprise - MySQL GUI v6.5
 MySQL - 5.6.17 : Database - aptsec_db
 *********************************************************************
@@ -191,49 +191,7 @@ CREATE TABLE `contact` (
   `agency_type_id` int(11) DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
   `modified_by` int(11) DEFAULT NULL,
-  `modified_date` datetime DEFAULT NULL, 
-
-  `register_date` date DEFAULT NULL,
-  `worker_code` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `recruiter_id` int(11) DEFAULT NULL,  
-  `company_id` int(11) DEFAULT NULL,
-  `to_country_id` int(11) DEFAULT NULL,
-  `service_type_id` int(11) DEFAULT NULL,
-  `worker_type_id` int(11) DEFAULT NULL,
-  `agency_id` int(11) DEFAULT NULL,
-  `passport_no` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `passport_issue_date` date DEFAULT NULL,
-  `passport_expired_date` date DEFAULT NULL,
-  `id_card_no` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `id_card_issue_date` date DEFAULT NULL,
-  `id_card_expired_date` date DEFAULT NULL,
-  `date_of_send_document` date DEFAULT NULL,
-  `document_type_id` int(11) DEFAULT NULL,
-  `date_of_send_bio_scan` date DEFAULT NULL,
-  `date_of_send_medical_checkup_sd` date DEFAULT NULL,
-  `date_of_receive_passport` date DEFAULT NULL,
-  `date_of_send_ppc_sd` date DEFAULT NULL,
-  `date_of_mofa` date DEFAULT NULL COMMENT 'MOFA = ministry of foreign affaire',
-  `date_of_employer` date DEFAULT NULL,
-  `employer_name` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
-  `employer_address` text CHARACTER SET utf8,
-  `employer_nirc` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `employer_phone` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
-  `employer_phone_2` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
-  `date_of_visa_rd_confirm` date DEFAULT NULL,
-  `date_of_visa_rd_receive` date DEFAULT NULL,
-  `date_of_buy_air_ticket` date DEFAULT NULL,
-  `date_of_fly` date DEFAULT NULL,
-  `Note` text CHARACTER SET utf8,
-  `border_crossing_id` int(11) NOT NULL DEFAULT '1',
-  `passport_photo_date` date DEFAULT NULL,
-  `work_permit_date` date DEFAULT NULL,
-  `name_list_date` date DEFAULT NULL,
-  `is_cancel` tinyint(1) NOT NULL DEFAULT '0',
-  `canceled_date` date DEFAULT NULL,
-  `cancel_type_id` int(11) DEFAULT NULL,
-  `canceled_reason` text CHARACTER SET utf8,
-
+  `modified_date` datetime DEFAULT NULL,
   PRIMARY KEY (`contact_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=239 DEFAULT CHARSET=latin1;
 
@@ -416,6 +374,64 @@ CREATE TABLE `position` (
 
 /*Data for the table `position` */
 
+/*Table structure for table `register` */
+
+DROP TABLE IF EXISTS `register`;
+
+CREATE TABLE `register` (
+  `worker_id` int(11) NOT NULL AUTO_INCREMENT,
+  `register_date` date DEFAULT NULL,
+  `worker_code` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `recruiter_id` int(11) DEFAULT NULL,
+  `contact_id` int(11) DEFAULT NULL COMMENT 'contact info',
+  `company_id` int(11) DEFAULT NULL,
+  `to_country_id` int(11) DEFAULT NULL,
+  `service_type_id` int(11) DEFAULT NULL,
+  `worker_type_id` int(11) DEFAULT NULL,
+  `agency_id` int(11) DEFAULT NULL,
+  `passport_no` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `passport_issue_date` date DEFAULT NULL,
+  `passport_expired_date` date DEFAULT NULL,
+  `id_card_no` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `id_card_issue_date` date DEFAULT NULL,
+  `id_card_expired_date` date DEFAULT NULL,
+  `date_of_send_document` date DEFAULT NULL,
+  `document_type_id` int(11) DEFAULT NULL,
+  `date_of_send_bio_scan` date DEFAULT NULL,
+  `date_of_send_medical_checkup_sd` date DEFAULT NULL,
+  `date_of_receive_passport` date DEFAULT NULL,
+  `date_of_send_ppc_sd` date DEFAULT NULL,
+  `date_of_mofa` date DEFAULT NULL COMMENT 'MOFA = ministry of foreign affaire',
+  `date_of_employer` date DEFAULT NULL,
+  `employer_name` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
+  `employer_address` text CHARACTER SET utf8,
+  `employer_address_2` text CHARACTER SET utf8,
+  `employer_address_3` text CHARACTER SET utf8,
+  `employer_address_4` text CHARACTER SET utf8,
+  `employer_address_5` text CHARACTER SET utf8,
+  `employer_nirc` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `employer_phone` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
+  `employer_phone_2` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
+  `date_of_visa_rd_confirm` date DEFAULT NULL,
+  `date_of_visa_rd_receive` date DEFAULT NULL,
+  `date_of_buy_air_ticket` date DEFAULT NULL,
+  `date_of_fly` date DEFAULT NULL,
+  `Note` text CHARACTER SET utf8,
+  `border_crossing_id` int(11) NOT NULL DEFAULT '1',
+  `passport_photo_date` date DEFAULT NULL,
+  `work_permit_date` date DEFAULT NULL,
+  `name_list_date` date DEFAULT NULL,
+  `is_cancel` tinyint(1) NOT NULL DEFAULT '0',
+  `canceled_date` date DEFAULT NULL,
+  `cancel_type_id` int(11) DEFAULT NULL,
+  `canceled_reason` text CHARACTER SET utf8,
+  `created_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`worker_id`),
+  KEY `FK_register` (`contact_id`),
+  CONSTRAINT `FK_register` FOREIGN KEY (`contact_id`) REFERENCES `contact` (`contact_id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=latin1;
+
+/*Data for the table `register` */
 
 /*Table structure for table `register_type` */
 
