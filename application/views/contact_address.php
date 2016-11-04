@@ -13,25 +13,33 @@
                 </div>
             </div>
             <div class="box-body">
+
                 <div class="row">
-                    <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                        <label for="house_no<?php echo $i;?>">House No.</label>
-                        <div class="input-group">
-                            <div class="input-group-addon">
-                                #
-                            </div>
-                            <input type="text" class="form-control" id="house_no<?php echo $i;?>" name="house_no<?php echo $i;?>" placeholder="Ex: 9A" value="<?php echo $add->house_no; ?>">
-                        </div>
+                    <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <label>Address</label>
+                        <textarea id="address" name="address" class="form-control"><?php echo $add->address;?></textarea>
                     </div>
-                    <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                        <label for="street_no<?php echo $i;?>">Street No.</label>
-                        <div class="input-group">
-                            <div class="input-group-addon">
-                                @
-                            </div>
-                            <input type="text" class="form-control" id="street_no<?php echo $i;?>" name="street_no<?php echo $i;?>" placeholder="Ex: Norodom Blvd" value="<?php echo $add->street_no; ?>">
-                        </div>
-                    </div>
+                </div>
+
+                <div class="row">
+<!--                    <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">-->
+<!--                        <label for="house_no--><?php //echo $i;?><!--">House No.</label>-->
+<!--                        <div class="input-group">-->
+<!--                            <div class="input-group-addon">-->
+<!--                                #-->
+<!--                            </div>-->
+<!--                            <input type="text" class="form-control" id="house_no--><?php //echo $i;?><!--" name="house_no--><?php //echo $i;?><!--" placeholder="Ex: 9A" value="--><?php //echo $add->house_no; ?><!--">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">-->
+<!--                        <label for="street_no--><?php //echo $i;?><!--">Street No.</label>-->
+<!--                        <div class="input-group">-->
+<!--                            <div class="input-group-addon">-->
+<!--                                @-->
+<!--                            </div>-->
+<!--                            <input type="text" class="form-control" id="street_no--><?php //echo $i;?><!--" name="street_no--><?php //echo $i;?><!--" placeholder="Ex: Norodom Blvd" value="--><?php //echo $add->street_no; ?><!--">-->
+<!--                        </div>-->
+<!--                    </div>-->
                     <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
                         <label>Country</label>
                         <div class="input-group">
@@ -106,12 +114,7 @@
                     <input type="hidden" id="address_id<?php echo $i;?>" name="address_id<?php echo $i;?>" value="<?php echo $add->address_id;?>" />
 
                 </div>
-                <div class="row">
-                    <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <label>Address</label>
-                        <textarea id="address" name="address" class="form-control"><?php echo $add->address;?></textarea>
-                    </div>
-                </div>
+
 
             </div>
 

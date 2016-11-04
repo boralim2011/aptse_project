@@ -292,8 +292,8 @@ desired effect
                         <li <?php if($this->Menu=='nationality') echo 'class="active"'; ?> >
                             <a href="#nationality"><i class="fa fa-flag"></i> <span>Nationality</span></a>
                         </li>
-                        <li <?php if($this->Menu=='border_crossing') echo 'class="active"'; ?> >
-                            <a href="#border_crossing"><i class="fa fa-arrows"></i> <span>Border Crossing</span></a>
+                        <li <?php if($this->Menu=='border_crossings') echo 'class="active"'; ?> >
+                            <a href="#border_crossings"><i class="fa fa-arrows"></i> <span>Border Crossings</span></a>
                         </li>
 
                         <!-- Register -->
