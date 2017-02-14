@@ -329,7 +329,8 @@
                         else{
                             if(data.success===true)
                             {
-                                if ($(".btn-refresh").length) $(".btn-refresh").trigger('click');
+                                //if ($(".btn-refresh").length) $(".btn-refresh").trigger('click');
+                                if ($("#btn-search").length) $("#btn-search").trigger('click');
                             }
                             show_message(data.message, $("#message"));
                         }

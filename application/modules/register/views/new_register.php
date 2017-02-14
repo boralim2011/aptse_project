@@ -1,3 +1,4 @@
+
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
@@ -56,19 +57,19 @@
                             <input type="text" class="form-control" id="contact_code" name="contact_code" placeholder="Enter register code" value="<?php echo $contact->contact_code; ?>"  readonly="readonly">
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <label><span class="text-red">*</span> First Name</label>
+                            <label>First Name</label>
                             <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter register name" value="<?php echo $contact->first_name; ?>">
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <label><span class="text-red">*</span> First Name (Khmer)</label>
+                            <label>First Name (Khmer)</label>
                             <input type="text" class="form-control" id="first_name_kh" name="first_name_kh" placeholder="Enter register name" value="<?php echo $contact->first_name_kh; ?>">
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <label><span class="text-red">*</span> Last Name</label>
+                            <label>Last Name</label>
                             <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter register name" value="<?php echo $contact->last_name; ?>">
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <label><span class="text-red">*</span> Last Name (Khmer)</label>
+                            <label>Last Name (Khmer)</label>
                             <input type="text" class="form-control" id="last_name_kh" name="last_name_kh" placeholder="Enter register name" value="<?php echo $contact->last_name_kh; ?>">
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -106,7 +107,7 @@
                                 <select class="select2" id="nationality_id" name="nationality_id" data-placeholder="--Select--" style="width: 100%;">
                                     <option value="1">Khmer</option>
                                     <?php if($contact->nationality_id!=0){?>
-                                    <option value="<?php echo $contact->nationality_id; ?>" selected="selected"><?php echo $register->nationality_name;?></option>
+                                    <option value="<?php echo $contact->nationality_id; ?>" selected="selected"><?php echo $contact->nationality_name;?></option>
                                     <?php }?>
                                 </select>
                                 <a href="#" class="input-group-addon btn btn-primary" id="btn-new-nationality" data-toggle="tooltip" title="New Nationality">
@@ -123,15 +124,7 @@
                                 <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Phone number" value="<?php echo $contact->phone_number; ?>">
                             </div>
                         </div>
-                        <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <label>Phone Number 2</label>
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                    <i class="fa fa-phone"></i>
-                                </div>
-                                <input type="text" class="form-control" id="phone_number_2" name="phone_number_2" placeholder="Phone number" value="<?php echo $contact->phone_number_2; ?>">
-                            </div>
-                        </div>
+
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
                             <label>Height</label>
                             <input type="text" class="form-control" id="height" name="height" placeholder="000 cm" value="<?php echo $contact->height; ?>">
@@ -143,8 +136,6 @@
 
                         <input type="hidden" id="contact_id" name="contact_id" value="<?php echo isset($contact->contact_id)? $contact->contact_id:0;?>"/>
                         <input type="hidden" id="contact_type" name="contact_type" value="<?php echo isset($contact->contact_type)? $contact->contact_type:'';?>"/>
-                        <input type="hidden" id="created_date" name="created_date" value="<?php echo isset($contact->created_date)? $contact->created_date:0;?>" />
-                        <input type="hidden" id="is_deletable" name="is_deletable" value="<?php echo isset($contact->is_deletable)? $contact->is_deletable:0;?>" />
 
                     </div>
                 </div>
@@ -222,15 +213,7 @@
                                 <input type="text" class="form-control" id="family_phone" name="family_phone" placeholder="Enter phone number" value="<?php echo $contact->family_phone; ?>">
                             </div>
                         </div>
-                        <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <label>Family Phone 2</label>
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                    <i class="fa fa-phone"></i>
-                                </div>
-                                <input type="text" class="form-control" id="family_phone_2" name="family_phone_2" placeholder="Enter phone number" value="<?php echo $contact->family_phone_2; ?>">
-                            </div>
-                        </div>
+
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
                             <label>Number of Brother</label>
                             <input type="text" class="form-control" id="number_of_brother" name="number_of_brother" placeholder="0" value="<?php echo $contact->number_of_brother; ?>">
@@ -278,8 +261,8 @@
                             <label><span class="text-red">*</span> Company's Name</label>
                             <select class="select2" id="company_id" name="company_id" data-placeholder="--Select--" style="width: 100%;">
                                 <option></option>
-                                <?php if($register->company_id!=0){?>
-                                <option value="<?php echo $register->company_id; ?>" selected="selected"><?php echo $register->company_name;?></option>
+                                <?php if($contact->company_id!=0){?>
+                                <option value="<?php echo $contact->company_id; ?>" selected="selected"><?php echo $contact->company_name;?></option>
                                 <?php }?>
                             </select>
                         </div>
@@ -288,8 +271,8 @@
                             <div class="input-group">
                                 <select class="select2" id="service_type_id" name="service_type_id" data-placeholder="--Select--" style="width: 100%;">
                                     <option></option>
-                                    <?php if($register->service_type_id!=0){?>
-                                    <option value="<?php echo $register->service_type_id; ?>" selected="selected"><?php echo $register->service_type_name;?></option>
+                                    <?php if($contact->service_type_id!=0){?>
+                                    <option value="<?php echo $contact->service_type_id; ?>" selected="selected"><?php echo $contact->service_type_name;?></option>
                                     <?php }?>
                                 </select>
                                 <a href="#" class="input-group-addon btn btn-primary" id="btn-new-service-type" data-toggle="tooltip" title="New Service Type">
@@ -300,32 +283,9 @@
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
                             <label>Worker Code</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="worker_code" name="worker_code" placeholder="Enter worker code" value="<?php echo $register->worker_code; ?>"  data-toggle="tooltip" title="Click button generate or just keep it blank!">
+                                <input type="text" class="form-control" id="worker_code" name="worker_code" placeholder="Enter worker code" value="<?php echo $contact->worker_code; ?>"  data-toggle="tooltip" title="Click button generate or just keep it blank!">
                                 <a class="input-group-addon" data-toggle="tooltip" title="Generate Worker Code" href="#" id="btn-generate-code">
                                     <i class="	fa fa-bolt"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <label><span class="text-red">*</span> Recruiter</label>
-                            <select class="select2" id="recruiter_id" name="recruiter_id" data-placeholder="--Select--" style="width: 100%;">
-                                <option></option>
-                                <?php if($register->recruiter_id!=0){?>
-                                <option value="<?php echo $register->recruiter_id; ?>" selected="selected"><?php echo $register->recruiter_name;?></option>
-                                <?php }?>
-                            </select>
-                        </div>
-                        <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <label><span class="text-red">*</span> Country Name</label>
-                            <div class="input-group">
-                                <select class="select2" id="to_country_id" name="to_country_id" data-placeholder="--Select--" style="width: 100%;" <?php //echo isset($register->to_country_id) && $register->to_country_id!=0? 'disabled="disabled"':''; ?> >
-                                    <option></option>
-                                    <?php if($register->to_country_id!=0){?>
-                                        <option value="<?php echo $register->to_country_id; ?>" selected="selected"><?php echo $register->to_country_name;?></option>
-                                    <?php }?>
-                                </select>
-                                <a href="#" class="input-group-addon btn btn-primary btn-new-country" data-toggle="tooltip" title="New Country">
-                                    <i class="fa fa-plus"></i>
                                 </a>
                             </div>
                         </div>
@@ -335,16 +295,40 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" class="form-control datepicker" name="register_date" id="register_date" value="<?php echo $register->register_date;?>">
+                                <input type="text" class="form-control datepicker" name="register_date" id="register_date" value="<?php echo $contact->register_date;?>">
                             </div>
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <label><span class="text-red">*</span> Register Type</label>
+                            <label><span class="text-red">*</span> Country Name</label>
                             <div class="input-group">
-                                <select class="select2" id="worker_type_id" name="worker_type_id" data-placeholder="--Select--" style="width: 100%;">
+                                <select class="select2" id="to_country_id" name="to_country_id" data-placeholder="--Select--" style="width: 100%;" <?php //echo isset($contact->to_country_id) && $contact->to_country_id!=0? 'disabled="disabled"':''; ?> >
                                     <option></option>
-                                    <?php if($register->worker_type_id!=0){?>
-                                    <option value="<?php echo $register->worker_type_id; ?>" selected="selected"><?php echo $register->register_type_name;?></option>
+                                    <?php if($contact->to_country_id!=0){?>
+                                        <option value="<?php echo $contact->to_country_id; ?>" selected="selected"><?php echo $contact->to_country_name;?></option>
+                                    <?php }?>
+                                </select>
+                                <a href="#" class="input-group-addon btn btn-primary btn-new-country" data-toggle="tooltip" title="New Country">
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                            <label>Recruiter</label>
+                            <select class="select2" id="recruiter_id" name="recruiter_id" data-placeholder="--Select--" style="width: 100%;">
+                                <option></option>
+                                <?php if($contact->recruiter_id!=0){?>
+                                <option value="<?php echo $contact->recruiter_id; ?>" selected="selected"><?php echo $contact->recruiter_name;?></option>
+                                <?php }?>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                            <label>Register Type</label>
+                            <div class="input-group">
+                                <select class="select2" id="register_type_id" name="register_type_id" data-placeholder="--Select--" style="width: 100%;">
+                                    <option></option>
+                                    <?php if($contact->register_type_id!=0){?>
+                                    <option value="<?php echo $contact->register_type_id; ?>" selected="selected"><?php echo $contact->register_type_name;?></option>
                                     <?php }?>
                                 </select>
                                 <a href="#" class="input-group-addon btn btn-primary" id="btn-new-register-type" data-toggle="tooltip" title="New Worker Type">
@@ -353,20 +337,6 @@
                             </div>
                         </div>
 
-                        <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <label><span class="text-red">*</span> Border Crossing</label>
-                            <div class="input-group">
-                                <select class="select2" id="border_crossing_id" name="border_crossing_id" data-placeholder="--Select--" style="width: 100%;">
-                                    <option value="1"> None </option>
-                                    <?php if($register->border_crossing_id!=1){?>
-                                        <option value="<?php echo $register->border_crossing_id; ?>" selected="selected"><?php echo $register->border_crossing_name;?></option>
-                                    <?php }?>
-                                </select>
-                                <a href="#" class="input-group-addon btn btn-primary" id="btn-new-border-crossing" data-toggle="tooltip" title="New Worker Type">
-                                    <i class="fa fa-plus"></i>
-                                </a>
-                            </div>
-                        </div>
 
                     </div>
                 </div>
@@ -381,7 +351,7 @@
                     <div class="row">
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
                             <label>ID Card No</label>
-                            <input type="text" class="form-control" id="id_card_no" name="id_card_no" placeholder="Enter ID Card No" value="<?php echo $register->id_card_no; ?>">
+                            <input type="text" class="form-control" id="id_card_no" name="id_card_no" placeholder="Enter ID Card No" value="<?php echo $contact->id_card_no; ?>">
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
                             <label>ID Card Issue Date</label>
@@ -389,7 +359,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" class="form-control datepicker" name="id_card_issue_date" id="id_card_issue_date" value="<?php echo $register->id_card_issue_date;?>">
+                                <input type="text" class="form-control datepicker" name="id_card_issue_date" id="id_card_issue_date" value="<?php echo $contact->id_card_issue_date;?>">
                             </div>
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -398,7 +368,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" class="form-control datepicker" name="id_card_expired_date" id="id_card_expired_date" value="<?php echo $register->id_card_expired_date;?>">
+                                <input type="text" class="form-control datepicker" name="id_card_expired_date" id="id_card_expired_date" value="<?php echo $contact->id_card_expired_date;?>">
                             </div>
                         </div>
 
@@ -406,8 +376,8 @@
                             <label>Agency</label>
                             <select class="select2" id="agency_id" name="agency_id" data-placeholder="--Select--" style="width: 100%;">
                                 <option></option>
-                                <?php if($register->agency_id!=0){?>
-                                <option value="<?php echo $register->agency_id; ?>" selected="selected"><?php echo $register->agency_name;?></option>
+                                <?php if($contact->agency_id!=0){?>
+                                <option value="<?php echo $contact->agency_id; ?>" selected="selected"><?php echo $contact->agency_name;?></option>
                                 <?php }?>
                             </select>
                         </div>
@@ -417,7 +387,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" class="form-control datepicker" name="date_of_send_document" id="date_of_send_document" value="<?php echo $register->date_of_send_document;?>">
+                                <input type="text" class="form-control datepicker" name="date_of_send_document" id="date_of_send_document" value="<?php echo $contact->date_of_send_document;?>">
                             </div>
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -425,8 +395,8 @@
                             <div class="input-group">
                                 <select class="select2" id="document_type_id" name="document_type_id" data-placeholder="--Select--" style="width: 100%;">
                                     <option></option>
-                                    <?php if($register->document_type_id!=0){?>
-                                    <option value="<?php echo $register->document_type_id; ?>" selected="selected"><?php echo $register->document_type_name;?></option>
+                                    <?php if($contact->document_type_id!=0){?>
+                                    <option value="<?php echo $contact->document_type_id; ?>" selected="selected"><?php echo $contact->document_type_name;?></option>
                                     <?php }?>
                                 </select>
                                 <a href="#" class="input-group-addon btn btn-primary" id="btn-new-document-type" data-toggle="tooltip" title="New Document Type">
@@ -441,7 +411,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" class="form-control datepicker" name="passport_photo_date" id="passport_photo_date" value="<?php echo $register->passport_photo_date;?>">
+                                <input type="text" class="form-control datepicker" name="passport_photo_date" id="passport_photo_date" value="<?php echo $contact->passport_photo_date;?>">
                             </div>
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -450,26 +420,16 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" class="form-control datepicker" name="work_permit_date" id="work_permit_date" value="<?php echo $register->work_permit_date;?>">
+                                <input type="text" class="form-control datepicker" name="work_permit_date" id="work_permit_date" value="<?php echo $contact->work_permit_date;?>">
                             </div>
                         </div>
-                        <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <label>Name List Date</label>
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                    <i class="fa fa-calendar"></i>
-                                </div>
-                                <input type="text" class="form-control datepicker" name="name_list_date" id="name_list_date" value="<?php echo $register->name_list_date;?>">
-                            </div>
-                        </div>
-
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
                             <label>Date of Send BIO SD</label>
                             <div class="input-group">
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" class="form-control datepicker" name="date_of_send_bio_scan" id="date_of_send_bio_scan" value="<?php echo $register->date_of_send_bio_scan;?>">
+                                <input type="text" class="form-control datepicker" name="date_of_send_bio_scan" id="date_of_send_bio_scan" value="<?php echo $contact->date_of_send_bio_scan;?>">
                             </div>
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -478,16 +438,62 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" class="form-control datepicker" name="date_of_send_medical_checkup_sd" id="date_of_send_medical_checkup_sd" value="<?php echo $register->date_of_send_medical_checkup_sd;?>">
+                                <input type="text" class="form-control datepicker" name="date_of_send_medical_checkup_sd" id="date_of_send_medical_checkup_sd" value="<?php echo $contact->date_of_send_medical_checkup_sd;?>">
                             </div>
                         </div>
+
+                        <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                            <label>Name List Date</label>
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input type="text" class="form-control datepicker" name="name_list_date" id="name_list_date" value="<?php echo $contact->name_list_date;?>">
+                            </div>
+                        </div>
+                        <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                            <label>OCWC NO</label>
+                            <input type="text" class="form-control" id="ocwc_no" name="ocwc_no" placeholder="" value="<?php echo $contact->ocwc_no; ?>">
+                        </div>
+                        <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                            <label>Employer</label>
+                            <select class="select2" id="employer_id" name="employer_id" data-placeholder="--Select--" style="width: 100%;">
+                                <option></option>
+                                <?php if($contact->employer_id!=0){?>
+                                    <option value="<?php echo $contact->employer_id; ?>" selected="selected"><?php echo $contact->employer_name;?></option>
+                                <?php }?>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                            <label>Employer's Date</label>
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input type="text" class="form-control datepicker" name="date_of_employer" id="date_of_employer" value="<?php echo $contact->date_of_employer;?>">
+                            </div>
+                        </div>
+                        <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                            <label>List No</label>
+                            <select id="register_key" name="register_key" class="form-control select2" data-placeholder=""  style="width: 100%;">
+                                <?php
+                                for($key=1; $key<10; $key++){
+                                    ?>
+                                    <option value="<?php echo $key;?>" <?php echo isset($contact->register_key) && $contact->register_key==$key? 'selected="selected"':'';?> ><?php echo $key;?></option>
+                                <?php
+                                }
+                                ?>
+                            </select>
+                        </div>
+
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
                             <label>Date of PPC SD</label>
                             <div class="input-group">
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" class="form-control datepicker" name="date_of_send_ppc_sd" id="date_of_send_ppc_sd" value="<?php echo $register->date_of_send_ppc_sd;?>">
+                                <input type="text" class="form-control datepicker" name="date_of_send_ppc_sd" id="date_of_send_ppc_sd" value="<?php echo $contact->date_of_send_ppc_sd;?>">
                             </div>
                         </div>
 
@@ -497,13 +503,13 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" class="form-control datepicker" name="date_of_receive_passport" id="date_of_receive_passport" value="<?php echo $register->date_of_receive_passport;?>">
+                                <input type="text" class="form-control datepicker" name="date_of_receive_passport" id="date_of_receive_passport" value="<?php echo $contact->date_of_receive_passport;?>">
                             </div>
                         </div>
 
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
                             <label>Passport No</label>
-                            <input type="text" class="form-control" id="passport_no" name="passport_no" placeholder="Enter Passport Number" value="<?php echo $register->passport_no; ?>">
+                            <input type="text" class="form-control" id="passport_no" name="passport_no" placeholder="Enter Passport Number" value="<?php echo $contact->passport_no; ?>">
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
                             <label>Passport Issue Date</label>
@@ -511,7 +517,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" class="form-control datepicker" name="passport_issue_date" id="passport_issue_date" value="<?php echo $register->passport_issue_date;?>">
+                                <input type="text" class="form-control datepicker" name="passport_issue_date" id="passport_issue_date" value="<?php echo $contact->passport_issue_date;?>">
                             </div>
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -520,7 +526,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" class="form-control datepicker" name="passport_expired_date" id="passport_expired_date" value="<?php echo $register->passport_expired_date;?>">
+                                <input type="text" class="form-control datepicker" name="passport_expired_date" id="passport_expired_date" value="<?php echo $contact->passport_expired_date;?>">
                             </div>
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -529,7 +535,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" class="form-control datepicker" name="date_of_mofa" id="date_of_mofa" value="<?php echo $register->date_of_mofa;?>">
+                                <input type="text" class="form-control datepicker" name="date_of_mofa" id="date_of_mofa" value="<?php echo $contact->date_of_mofa;?>">
                             </div>
                         </div>
 
@@ -539,7 +545,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" class="form-control datepicker" name="date_of_visa_rd_confirm" id="date_of_visa_rd_confirm" value="<?php echo $register->date_of_visa_rd_confirm;?>">
+                                <input type="text" class="form-control datepicker" name="date_of_visa_rd_confirm" id="date_of_visa_rd_confirm" value="<?php echo $contact->date_of_visa_rd_confirm;?>">
                             </div>
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -548,7 +554,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" class="form-control datepicker" name="date_of_visa_rd_receive" id="date_of_visa_rd_receive" value="<?php echo $register->date_of_visa_rd_receive;?>">
+                                <input type="text" class="form-control datepicker" name="date_of_visa_rd_receive" id="date_of_visa_rd_receive" value="<?php echo $contact->date_of_visa_rd_receive;?>">
                             </div>
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -557,30 +563,15 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" class="form-control datepicker" name="date_of_buy_air_ticket" id="date_of_buy_air_ticket" value="<?php echo $register->date_of_buy_air_ticket;?>">
+                                <input type="text" class="form-control datepicker" name="date_of_buy_air_ticket" id="date_of_buy_air_ticket" value="<?php echo $contact->date_of_buy_air_ticket;?>">
                             </div>
                         </div>
-                        <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <label>Date of Fly</label>
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                    <i class="fa fa-calendar"></i>
-                                </div>
-                                <input type="text" class="form-control datepicker" name="date_of_fly" id="date_of_fly" value="<?php echo $register->date_of_fly;?>">
-                            </div>
-                        </div>
-                        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <label>Note</label>
-                            <textarea class="form-control" name="note" id="note" rows="5"><?php echo $register->note;?></textarea>
-                        </div>
-
-                        <input type="hidden" id="worker_id" name="worker_id" value="<?php echo $register->worker_id;?>" />
 
                     </div>
                 </div>
 
                 <div class="box-header with-border bg-title">
-                    <h3 class="box-title">Employer Info :</h3>
+                    <h3 class="box-title">Travel Info :</h3>
                     <div class="box-tools pull-right">
                         <!--<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>-->
                         <!--<button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>-->
@@ -588,55 +579,63 @@
                 </div>
                 <div class="box-body">
                     <div class="row">
+
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <label>Employer's Name</label>
-                            <input type="text" class="form-control" id="employer_name" name="employer_name" placeholder="Enter Employer's Name" value="<?php echo $register->employer_name; ?>">
-                        </div>
-                        <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <label>Employer's Phone</label>
-                            <input type="text" class="form-control" id="employer_phone" name="employer_phone" placeholder="Enter Employer's Phone" value="<?php echo $register->employer_phone; ?>">
-                        </div>
-                        <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <label>Employer's Phone 2</label>
-                            <input type="text" class="form-control" id="employer_phone_2" name="employer_phone_2" placeholder="Enter Employer's Phone" value="<?php echo $register->employer_phone_2; ?>">
-                        </div>
-                        <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <label>Employer's Date</label>
+                            <label>Date of Travel</label>
                             <div class="input-group">
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" class="form-control datepicker" name="date_of_employer" id="date_of_employer" value="<?php echo $register->date_of_employer;?>">
+                                <input type="text" class="form-control datepicker" name="date_of_travel" id="date_of_travel" value="<?php echo $contact->date_of_travel;?>">
                             </div>
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <label>Employer's Address</label>
-                            <input type="text" class="form-control" id="employer_address" name="employer_address" placeholder="Enter Employer's Address" value="<?php echo $register->employer_address; ?>">
+                            <label>From Location</label>
+                            <input type="text" class="form-control" id="from_location" name="from_location" placeholder="" value="<?php echo $contact->from_location; ?>">
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <label>Employer's Address 2</label>
-                            <input type="text" class="form-control" id="employer_address_2" name="employer_address_2" placeholder="Enter Employer's Address" value="<?php echo $register->employer_address_2; ?>">
+                            <label>To Location</label>
+                            <input type="text" class="form-control" id="to_location" name="to_location" placeholder="" value="<?php echo $contact->to_location; ?>">
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <label>Employer's Address 3</label>
-                            <input type="text" class="form-control" id="employer_address" name="employer_address_3" placeholder="Enter Employer's Address" value="<?php echo $register->employer_address_3; ?>">
+                            <label>Transportation</label>
+                            <input type="text" class="form-control" id="travel_method" name="travel_method" placeholder="" value="<?php echo $contact->travel_method; ?>">
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <label>Employer's Address 4</label>
-                            <input type="text" class="form-control" id="employer_address" name="employer_address_4" placeholder="Enter Employer's Address" value="<?php echo $register->employer_address_4; ?>">
+                            <label>Travel Purpose</label>
+                            <input type="text" class="form-control" id="travel_purpose" name="travel_purpose" placeholder="" value="<?php echo $contact->travel_purpose; ?>">
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <label>Employer's Address 5</label>
-                            <input type="text" class="form-control" id="employer_address" name="employer_address_5" placeholder="Enter Employer's Address" value="<?php echo $register->employer_address_5; ?>">
+                            <label>Length of Stay</label>
+                            <input type="text" class="form-control" id="length_of_stay" name="length_of_stay" placeholder="" value="<?php echo $contact->length_of_stay; ?>">
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <label>Employer's NIRC</label>
-                            <input type="text" class="form-control" id="employer_nirc" name="employer_nirc" placeholder="Enter Employer's NIRC" value="<?php echo $register->employer_nirc; ?>">
+                            <label>Visa No</label>
+                            <input type="text" class="form-control" id="visa_no" name="visa_no" placeholder="" value="<?php echo $contact->visa_no; ?>">
+                        </div>
+
+                        <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                            <label>Border Crossings</label>
+                            <div class="input-group">
+                                <select class="select2" id="border_crossings_id" name="border_crossings_id" data-placeholder="--Select--" style="width: 100%;">
+                                    <option value="1"> None </option>
+                                    <?php if($contact->border_crossings_id!=1){?>
+                                        <option value="<?php echo $contact->border_crossings_id; ?>" selected="selected"><?php echo $contact->border_crossings_name;?></option>
+                                    <?php }?>
+                                </select>
+                                <a href="#" class="input-group-addon btn btn-primary" id="btn-new-border-crossings" data-toggle="tooltip" title="New Worker Type">
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <label>Note</label>
+                            <textarea class="form-control" name="note" id="note" rows="5"><?php echo $contact->note;?></textarea>
                         </div>
 
                     </div>
                 </div>
-
             </div>
 
 
@@ -653,7 +652,7 @@
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
                             <label>&nbsp;</label>
                             <div style="height: 34px;">
-                                <label style="margin-right: 30px;"><input type="checkbox" class="minimal form-control" id="female" name="gender" value="1" <?php if($register->is_cancel==1) echo 'checked="checked"';?>  > Is Cancel</label>
+                                <label style="margin-right: 30px;"><input type="checkbox" class="minimal form-control" id="is_cancel" name="is_cancel" value="1" <?php if($contact->is_cancel==1) echo 'checked="checked"';?>  > Is Cancel</label>
                             </div>
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -662,7 +661,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" class="form-control datepicker" name="canceled_date" id="canceled_date" value="<?php echo $register->canceled_date;?>">
+                                <input type="text" class="form-control datepicker" name="canceled_date" id="canceled_date" value="<?php echo $contact->canceled_date;?>">
                             </div>
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -670,8 +669,8 @@
                             <div class="input-group">
                                 <select class="select2" id="cancel_type_id" name="cancel_type_id" data-placeholder="--Select--" style="width: 100%;">
                                     <option></option>
-                                    <?php if($register->cancel_type_id!=0){?>
-                                    <option value="<?php echo $register->cancel_type_id; ?>" selected="selected"><?php echo $register->cancel_type_name;?></option>
+                                    <?php if($contact->cancel_type_id!=0){?>
+                                    <option value="<?php echo $contact->cancel_type_id; ?>" selected="selected"><?php echo $contact->cancel_type_name;?></option>
                                     <?php }?>
                                 </select>
                                 <a href="#" class="input-group-addon btn btn-primary" id="btn-new-cancel-type" data-toggle="tooltip" title="New Cancel Type">
@@ -681,7 +680,7 @@
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <label>Remark</label>
-                            <textarea class="form-control" name="canceled_reason" id="canceled_reason" rows="12"><?php echo $register->canceled_reason;?></textarea>
+                            <textarea class="form-control" name="canceled_reason" id="canceled_reason" rows="12"><?php echo $contact->canceled_reason;?></textarea>
                         </div>
 
                     </div>
@@ -690,7 +689,7 @@
 
             <div class="box-footer">
                 <button type="button" class="btn btn-primary" name="submit" id="submit"><i class="fa fa-save"></i> Submit </button>
-                <a href="#register/manage_register/<?php echo $register->to_country_id;?>" class="btn btn-default"><i class="fa fa-close"></i> Cancel </a>
+                <a href="#register/manage_register<?php echo $contact->view_country==0?"":"/$contact->view_country";?>" class="btn btn-default"><i class="fa fa-close"></i> Cancel </a>
             </div>
 
         </div>
@@ -739,6 +738,8 @@
             showInputs: false
         });
 
+
+        $("#register_key").select2();
 
         //personal info
         $("#nationality_id").select2({
@@ -858,6 +859,30 @@
             minimumInputLength: 1
         });
 
+
+        $("#employer_id").select2({
+            ajax: {
+                url: "<?php echo base_url()?>employer/get_combobox_items",
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term // search term
+                    };
+                },
+                processResults: function (data) {
+                    // parse the results into the format expected by Select2.
+                    // since we are using custom formatting functions we do not need to
+                    // alter the remote JSON data
+                    return {
+                        results: data
+                    };
+                },
+                cache: true
+            },
+            minimumInputLength: 1
+        });
+
         $("#to_country_id").select2({
             ajax: {
                 url: "<?php echo base_url()?>location/get_combobox_items",
@@ -883,7 +908,7 @@
             minimumInputLength: 1
         });
 
-        $("#worker_type_id").select2({
+        $("#register_type_id").select2({
             ajax: {
                 url: "<?php echo base_url()?>register_type/get_combobox_items",
                 dataType: 'json',
@@ -906,9 +931,9 @@
             minimumInputLength: 1
         });
 
-        $("#border_crossing_id").select2({
+        $("#border_crossings_id").select2({
             ajax: {
-                url: "<?php echo base_url()?>border_crossing/get_combobox_items",
+                url: "<?php echo base_url()?>border_crossings/get_combobox_items",
                 dataType: 'json',
                 delay: 250,
                 data: function (params) {
@@ -1003,7 +1028,7 @@
 
             var form = $("#contact-form");
             var formData = new FormData(form[0]);
-            var url = '<?php echo base_url();?>register/generate_code';
+            var url = '<?php echo base_url();?>register/generate_worker_code';
 
             //var formData = new FormData();
             formData.append('submit', 1);
@@ -1022,6 +1047,8 @@
                 },
                 success: function(data, status, xhr)
                 {
+                    //alert(data.worker_code);
+
                     if(data==521){
                         go_to_login();
                     }
@@ -1077,6 +1104,8 @@
                 },
                 success: function(data, status, xhr)
                 {
+                    //alert(data);
+
                     if(data==521){
                         go_to_login();
                     }
@@ -1087,8 +1116,6 @@
                             $("#address_id").val(data.model.address_id);
                             $("#address_id1").val(data.model.address_id1);
                             $("#address_id2").val(data.model.address_id2);
-                            $("#worker_id").val(data.model.worker_id);
-
                         }
 
                         show_message(data.message, $("#message"));
@@ -1117,6 +1144,6 @@
 <?php $this->load->view('service_type/new_service_type'); ?>
 <?php $this->load->view('register_type/new_register_type'); ?>
 <?php $this->load->view('document_type/new_document_type'); ?>
-<?php $this->load->view('border_crossing/new_border_crossing'); ?>
+<?php $this->load->view('border_crossings/new_border_crossings'); ?>
 <?php $this->load->view('cancel_type/new_cancel_type'); ?>
 

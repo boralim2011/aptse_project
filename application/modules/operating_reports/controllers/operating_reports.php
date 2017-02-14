@@ -9,11 +9,11 @@ class Operating_reports extends My_Controller {
         $this->Menu = 'register';
 
         $this->load->model('Contact_model');
-        //$this->load->model('Contact_address_model');
+        $this->load->model('Contact_address_model');
         $this->load->model('Location_model');
-        $this->load->model('Register_model');
         $this->load->model('Service_type_model');
-        $this->load->model('Register_type_model');
+        $this->load->model("Register_type_model");
+        $this->load->model("Document_type_model");
     }
 
 
@@ -21,89 +21,100 @@ class Operating_reports extends My_Controller {
 
     function index()
     {
-        $this->manage_register();
+        $this->show_report();
     }
 
-    function manage_register()
+    function show_report($view_country=3)
     {
-        if(!isset($_POST['ajax']) && !isset($_POST['submit'])) {  $this->show_404();return; }
+        if(!isset($_POST['ajax']) && !isset($_POST['search'])) {  $this->show_404();return; }
+
+        $search = isset($_POST['search'])?$_POST['search']:'';
+        //$page = isset($_POST['page']) ? $_POST['page']: 1;
+        //$display = isset($_POST['display']) ? $_POST['display']: 10;
+        $search_by = isset($_POST['search_by'])? $_POST['search_by']: 'contact_name';
+
+        $all_date = isset($_POST['all_date']);
+        $from_date = isset($_POST['from_date'])? $_POST['from_date']: Date('Y-m-d');
+        $to_date = isset($_POST['to_date'])? $_POST['to_date']: Date('Y-m-d');
+        $date_of = isset( $_POST['date_of'])?  $_POST['date_of']: "register_date";
+
+        $report_name = isset($_POST['report_name'])?$_POST['report_name']: "mfa_list_thai_report";
 
         $data['registers'] = array();
 
-        $register = new Register_model();
         $contact = new Contact_model();
 
-        if(isset($_POST['submit']))
+        Model_base::map_objects($contact, $_POST, true);
+
+        $contact->report_name = $report_name;
+        $contact->search = $search;
+        //$contact->display = $display;
+        //$contact->page = $page;
+        $contact->search_by = $search_by;
+        $contact->show_all = 1;
+
+        $contact->all_date = $all_date;
+        $contact->from_date = $from_date;
+        $contact->to_date = $to_date;
+        $contact->date_of = $date_of;
+
+
+        $contact->to_country_id = isset($_POST['to_country_id'])? $_POST['to_country_id'] : $view_country;
+
+        $contact->contact_type = $this->contact_type;
+
+        //if(isset($_POST['search'])) {echo print_r($contact); exit;}
+
+        $result = $this->Contact_model->get_reports($contact);
+        if($result->success)
         {
-            if(!isset($_POST['all_date']))
-            {
-                $message= '';
-                if(!$this->valid_date($_POST['from_date'])) $message="Please enter from date<br/>";
-                if(!$this->valid_date($_POST['to_date'])) $message.="Please enter to date";
-
-                $this->show_error($message);
-            }
-
-            Model_base::map_objects($register, $_POST);
-            Model_base::map_objects($contact, $_POST);
-
-            $data = array_merge($data,$_POST);
-            //echo json_encode($result);
-            //var_dump($data);
+            $data['registers'] = $result->models;
+            //$data['company_name'] = isset($result->models[0]->company_name)?$result->models[0]->company_name:"";
+            $data['employer_name'] = isset($result->models[0]->employer_name)?$result->models[0]->employer_name:"";
+            $data['employer_address'] = isset($result->models[0]->employer_address)?$result->models[0]->employer_address:"";
         }
 
-        $register->all_date = isset($_POST['all_date']) && $_POST['all_date']==1? 1:0 ;
-        $register->from_date = isset($_POST['from_date'])? $_POST['from_date']: Date('Y-m-01');
-        $register->to_date = isset($_POST['to_date'])? $_POST['to_date']: Date('Y-m-d');
-        $register->agency_type_id = isset($_POST['agency_type_id'])? $_POST['agency_type_id']: 0;
-        $register->date_of= isset($_POST['date_of'])? $_POST['date_of']:'register_date';
-        $register->search_option= isset($_POST['search_option'])? $_POST['search_option']:'like';
+        //Pagination
+        //$data['display'] = $display;
+        //$data['page'] = $page;
+        $data['search'] = $search;
+        $data['search_by'] = $search_by;
+        //$data['pages'] = is_array($result->models)? ceil($result->models[0]->records / $display): 0;
+        //$data['records'] = is_array($result->models)? $result->models[0]->records:0;
 
-        $register->id_card_no = isset($_POST['search_by']) && $_POST['search_by']=='id_card_no'? $_POST['search']:$register->id_card_no;
-        $register->passport_no = isset($_POST['search_by']) && $_POST['search_by']=='passport_no'? $_POST['search']:$register->passport_no;
-        $register->worker_code = isset($_POST['search_by']) && $_POST['search_by']=='worker_code'? $_POST['search']:$register->worker_code;
+        $data['view_country'] = $view_country;
 
-        $contact->phone_number = isset($_POST['search_by']) && $_POST['search_by']=='phone_number'? $_POST['search']:$contact->phone_number;
-        $contact->contact_code = isset($_POST['search_by']) && $_POST['search_by']=='contact_code'? $_POST['search']:$contact->contact_code;
-        $contact->contact_name = isset($_POST['search_by']) && $_POST['search_by']=='contact_name'? $_POST['search']:$contact->contact_name;
-        $contact->contact_name_kh = isset($_POST['search_by']) && $_POST['search_by']=='contact_name_kh'? $_POST['search']:$contact->contact_name_kh;
-        $contact->first_name = isset($_POST['search_by']) && $_POST['search_by']=='first_name'? $_POST['search']:$contact->first_name;
-        $contact->first_name_kh = isset($_POST['search_by']) && $_POST['search_by']=='first_name_kh'? $_POST['search']:$contact->first_name_kh;
-        $contact->last_name = isset($_POST['search_by']) && $_POST['search_by']=='last_name'? $_POST['search']:$contact->last_name;
-        $contact->last_name_kh = isset($_POST['search_by']) && $_POST['search_by']=='last_name_kh'? $_POST['search']:$contact->last_name_kh;
-
-
-        Model_base::map_objects($register, $contact, true);
-
-
-        $report_name = isset($_POST['report_name'])?$_POST['report_name']:'bio_data';
-        $data['report_name'] = $report_name;
-
-        $order_by = "order by st.service_type_name";
-        if($report_name=='worker_fly')
-        {
-            $order_by = "order by r.date_of_fly, st.service_type_name";
-            $register->date_of = "date_of_fly";
+        //get company info
+        $company = new Contact_model();
+        $company->contact_id = 1;
+        $result = $this->Contact_model->get($company);
+        if($result->success) {
+            $data['company_name'] = $result->model->contact_name;
         }
-        elseif($report_name=='worker_cancel')
-        {
-            $order_by = "order by r.canceled_date, st.service_type_name";
-            $register->date_of = "canceled_date";
+        //get company address
+        $address = new Contact_address_model();
+        $address->contact_id = $company->contact_id;
+        $address->address_key = "contact";
+        $result = $this->Contact_address_model->gets($address);
+        if($result->success){
+            $data['company_address'] = $result->models[0]->address;
         }
-
-        $register->contact_type = $this->contact_type;
-        $result = $this->Register_model->gets($register, $order_by);
-        if($result->success)$data['registers'] = $result->models;
 
         $agency = new Contact_model();
         $agency->contact_type='Agency';
-        $result = $this->Contact_model->gets($agency);
+        $result = $this->Contact_model->get_list($agency);
         if($result->success)$data['agencies'] = $result->models;
 
         $company = new Contact_model();
         $company->contact_type='Company';
-        $result = $this->Contact_model->gets($company);
+        $result = $this->Contact_model->get_list($company);
         if($result->success)$data['companies'] = $result->models;
+
+        $recruiter = new Contact_model();
+        $recruiter->contact_type='Recruiter';
+        $result = $this->Contact_model->get_list($recruiter);
+        if($result->success)$data['recruiters'] = $result->models;
+
 
         $country = new Location_model();
         $country->location_type_id = 1;
@@ -116,16 +127,26 @@ class Operating_reports extends My_Controller {
 
         $register_type = new Register_type_model();
         $result = $this->Register_type_model->gets($register_type);
-        if($result->success)$data['worker_types'] = $result->models;
+        if($result->success)$data['register_types'] = $result->models;
 
-        $recruiter = new Contact_model();
-        $recruiter->contact_type='Recruiter';
-        $result = $this->Contact_model->gets($recruiter);
-        if($result->success)$data['recruiters'] = $result->models;
+        $document_type = new Document_type_model();
+        $result = $this->Document_type_model->gets($document_type);
+        if($result->success)$data['document_types'] = $result->models;
 
-        $data = array_merge($data,(array)$register);
+        $data = array_merge($data,(array)$contact);
 
-        $this->load->view('operating_reports/operating_reports', $data);
+        $data['report_no'] = isset($_POST['report_no'])?$_POST['report_no']:"";
+        $data['logo'] = $this->get_photo_site().'logo_mfa_thai.png';
+
+
+        if(isset($_POST['print']))
+        {
+            $this->load->view('operating_reports/print_reports', $data);
+        }
+        else
+        {
+            $this->load->view('operating_reports/manage_reports', $data);
+        }
 
     }
 

@@ -11,6 +11,7 @@ class Contact_address_model extends Model_base
 
     public $address_id = 0;
     public $address = '';
+    public $address_kh = '';
     public $address_key = 'contact';
     public $contact_id = 0;
     public $country_id;

@@ -25,15 +25,17 @@ class Location_model extends Model_base
         $page = isset($model->page)?$model->page:1;
         $offset = ($page-1) * $display_count;
 
-        $sql=("select l.*, p.location_name as 'parent_location', lt.location_type_name as 'location_type', ".
-              "(select count(*) from location where location_name like '%$model->location_name%' ".
+        $location_name = $model->location_name;
+
+        $sql= "select l.*, p.location_name as 'parent_location', lt.location_type_name as 'location_type', ".
+              "(select count(*) from location where location_name like '%$location_name%' ".
               "and '$model->location_type_id' in ('', 0 , location_type_id) ) 'records' ".
               "from location l join location p on p.location_id = l.parent_location_id ".
               "join location_type lt on lt.location_type_id = l.location_type_id ".
-              "where l.location_name like '%$model->location_name%' ".
+              "where l.location_name like '%$location_name%' ".
               "and '$model->location_type_id' in ('', 0 , l.location_type_id) "
              ."limit $offset,$display_count"
-        );
+        ;
 
         $query = $this->db->query($sql);
 

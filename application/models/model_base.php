@@ -36,4 +36,5 @@ class Model_base extends CI_Model
         return sha1('P@ssw0rd'.$password);
     }
 
+
 }

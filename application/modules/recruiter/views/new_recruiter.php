@@ -86,15 +86,7 @@
                             <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Phone number" value="<?php echo $recruiter->phone_number; ?>">
                         </div>
                     </div>
-                    <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                        <label for="phone_number_2">Phone Number 2</label>
-                        <div class="input-group">
-                            <div class="input-group-addon">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                            <input type="text" class="form-control" id="phone_number_2" name="phone_number_2" placeholder="Phone number" value="<?php echo $recruiter->phone_number_2; ?>">
-                        </div>
-                    </div>
+
                     <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
                         <label for="email">Email address</label>
                         <div class="input-group">
@@ -105,11 +97,7 @@
                         </div>
                     </div>
 
-
                     <input type="hidden" id="contact_id" name="contact_id" value="<?php echo isset($recruiter->contact_id)? $recruiter->contact_id:0;?>"/>
-                    <input type="hidden" id="contact_type" name="contact_type" value="<?php echo isset($recruiter->contact_type)? $recruiter->contact_type:'';?>"/>
-                    <input type="hidden" id="created_date" name="created_date" value="<?php echo isset($recruiter->created_date)? $recruiter->created_date:0;?>" />
-                    <input type="hidden" id="is_deletable" name="is_deletable" value="<?php echo isset($recruiter->is_deletable)? $recruiter->is_deletable:0;?>" />
                     <input type="hidden" id="contact_code" name="contact_code" value="<?php echo isset($recruiter->contact_code)? $recruiter->contact_code:'';?>" />
 
                 </div>
@@ -254,6 +242,8 @@
                 },
                 success: function(data, status, xhr)
                 {
+                    //alert(data);
+
                     if(data==521){
                         go_to_login();
                     }

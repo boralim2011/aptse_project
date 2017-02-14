@@ -8,7 +8,6 @@ class User_model extends Model_base
     {
         parent::__construct();
 
-        if(!isset($this->created_date)) $this->created_date = Date('Y-m-d H:i:s', time());
     }
 
     public $user_id = 0;
@@ -16,23 +15,42 @@ class User_model extends Model_base
     public $password;
     public $email;
     public $is_active = 1;
-    public $is_hidden = 0;
-    public $is_editable = 1;
-    public $is_deletable = 1;
     public $contact_id = 0;
     public $user_group_id = 0;
-    public $created_date;
     public $image = '';
 
 
-    function gets(User_model $user)
+    function gets(User_model $model)
     {
-        $sql = "SELECT user_group.user_group_name, user.* ".
-                "FROM user JOIN user_group ON user.user_group_id = user_group.user_group_id ".
+        $display = isset($model->display)? $model->display:10;
+        $page = isset($model->page)?$model->page:1;
+        $offset = ($page-1) * $display;
+
+        $search = $model->search;
+        $field = isset($model->search_by)? $model->search_by: "user_name";
+
+        $user_group_id = $model->user_group_id;
+        $user_role_id = isset($model->user_role_id)? $model->user_role_id : 0;
+
+        $sql = "SELECT u.*, ".
+            "(SELECT count(*) ".
+                "FROM user ".
+                "JOIN user_group ON user.user_group_id = user_group.user_group_id ".
+                "LEFT JOIN permission ON permission.user_id = user.user_id ".
                 "WHERE user.is_hidden =0 ".
-                "AND ('$user->user_group_id'='' OR '$user->user_group_id' = 0 OR user.user_group_id = '$user->user_group_id') ".
-                "AND user_name LIKE '%$user->user_name%' ESCAPE '!' ".
-                "AND email LIKE '%$user->email%' ESCAPE '!'";
+                "AND user.$field LIKE '%$search%' ".
+                "AND '$user_group_id' in (0, user.user_group_id) ".
+                "AND '$user_role_id' in(0, permission.user_role_id) ".
+            ") 'records' ".
+            "FROM user u ".
+            "JOIN user_group ug ON u.user_group_id = ug.user_group_id ".
+            "LEFT JOIN permission ps ON ps.user_id = u.user_id ".
+            "WHERE u.is_hidden =0 ".
+            "AND u.$field LIKE '%$search%' ".
+            "AND '$user_group_id' in (0, u.user_group_id) ".
+            "AND '$user_role_id' in(0, ps.user_role_id) ".
+            "LIMIT $offset, $display"
+        ;
 
         $query = $this->db->query($sql);
 
@@ -168,6 +186,8 @@ class User_model extends Model_base
         if(!isset($user->created_date) || $user->created_date=='') $user->created_date = Date('Y-m-d H:i:s', time());
         if(!isset($user->contact_id) || $user->contact_id=='') unset($user->contact_id);
 
+        //echo $this->db->insert_string('user',$user); exit;
+
         $result=$this->db->insert('user', $user);
 
         if(!$result )
@@ -198,11 +218,12 @@ class User_model extends Model_base
 
 
         unset($user->password);
-        if(!isset($user->created_date) || $user->created_date=='') $user->created_date = Date('Y-m-d H:i:s', time());
+        //if(!isset($user->modified_date) || $user->modified_date=='') $user->modified_date = Date('Y-m-d H:i:s', time());
         if(!isset($user->contact_id) || $user->contact_id=='') unset($user->contact_id);
 
-        $this->db->where('user_id', $user->user_id);
+        //echo $this->db->update_string('user',$user, 'user_id=2'); exit;
 
+        $this->db->where('user_id', $user->user_id);
         $result = $this->db->update('user', $user);
 
         if(!$result )

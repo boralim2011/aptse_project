@@ -166,7 +166,8 @@
         $(document).on('hidden.bs.modal', '#dialog-location', function() {
             $("#location-form")[0].reset();
             //$("#modal-message").empty();
-            if($(".btn-refresh").length) $(".btn-refresh").trigger('click');
+            //if($(".btn-refresh").length) $(".btn-refresh").trigger('click');
+            if ($("#btn-search").length) $("#btn-search").trigger('click');
         });
 
         //submit user type to service to save

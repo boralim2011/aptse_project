@@ -11,13 +11,34 @@ class User_group_model extends Model_base
 
     public $user_group_id = 0;
     public $user_group_name = '';
-    public $is_deletable = 1;
+    //public $is_deletable = 1;
+    //public $is_editable = 1;
 
     function gets(User_group_model $model)
     {
-        $this->db->select("user_group.*, (select count(*) from user u where u.user_group_id=user_group.user_group_id) as 'members'");
-        $this->db->like("user_group_name", "$model->user_group_name");
+
+        $display = isset($model->display)? $model->display:10;
+        $page = isset($model->page)?$model->page:1;
+        $offset = ($page-1) * $display;
+
+        $user_group_name = $model->user_group_name;
+
+        $this->db->select("user_group.*, (select count(*) from user u where u.user_group_id=user_group.user_group_id) as 'members', ".
+            "(select count(*) from user_group where user_group_name like '%$user_group_name%') 'records' "
+        );
+        $this->db->like("user_group_name", "$user_group_name");
+        $this->db->limit($display, $offset);
         $query = $this->db->get('user_group');
+
+//        $sql = "select user_group.*, (select count(*) from user u where u.user_group_id=user_group.user_group_id) as 'members', ".
+//               "(select count(*) from user_group where user_group_name like '%$user_group_name%') 'records' ".
+//               "from user_group ".
+//               "where user_group_name like '%$user_group_name%' ".
+//               "limit $offset,$display";
+//
+//        $query = $this->db->query($sql);
+
+        //echo $this->db->last_query();
 
         if(!$query || $query->num_rows()== 0)
         {
@@ -110,6 +131,9 @@ class User_group_model extends Model_base
         {
             return Message_result::error_message('User group name is exist');
         }
+
+        $result = $this->get($model);
+        if(!$result->success || $result->model->is_editable==0) return Message_result::error_message('User group cannot be edited');
 
         $this->db->where('user_group_id', $model->user_group_id);
 

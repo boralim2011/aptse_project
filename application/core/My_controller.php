@@ -26,8 +26,6 @@ class My_controller extends CI_Controller
     public $Menu = 'home';
     public $UserSession;
 
-    public $Country_names = array(2=>'Cambodia',3 =>'Thai', 4=> 'Malaysia');
-
     function check_login()
     {
 

@@ -13,11 +13,16 @@
                 </div>
             </div>
             <div class="box-body">
-
+                <div class="row">
+                    <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <label>Address KH</label>
+                        <textarea id="address_kh<?php echo $i;?>" name="address_kh<?php echo $i;?>" class="form-control"><?php echo $add->address_kh;?></textarea>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <label>Address</label>
-                        <textarea id="address" name="address" class="form-control"><?php echo $add->address;?></textarea>
+                        <textarea id="address<?php echo $i;?>" name="address<?php echo $i;?>" class="form-control"><?php echo $add->address;?></textarea>
                     </div>
                 </div>
 

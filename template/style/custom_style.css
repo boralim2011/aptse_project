@@ -133,13 +133,12 @@
 
 
 /****** Report ******/
+.report { font-family: 'Times New Roman'; font-size: 14px; }
 .report th, .report td{ padding: 2px !important; }
 .report th { vertical-align : middle !important; text-align : center; }
+.report .bold { font-weight: bold; }
+.report .text-left { text-align: left; }
+.report .text-right { text-align: right; }
+
 /*.report td { line-height : 14px !important; }*/
 
-@media print {
-    .date-col {width: 65px;}
-}
-@media screen {
-    .date-col {width: 95px;}
-}

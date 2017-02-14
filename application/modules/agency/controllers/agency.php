@@ -25,21 +25,35 @@ class Agency extends My_Controller {
     {
         if(!isset($_POST['ajax']) && !isset($_POST['submit'])) {  $this->show_404();return; }
 
+        $search = isset($_POST['search'])?$_POST['search']:'';
+        $page = isset($_POST['page']) ? $_POST['page']: 1;
+        $display = isset($_POST['display']) ? $_POST['display']: 10;
+        $search_by = isset($_POST['search_by'])? $_POST['search_by']: 'contact_name';
+
+        $agency_type_id = isset($_POST['agency_type_id'])? $_POST['agency_type_id']:0;
+
         $data['agencies'] = array();
 
         $agency = new Contact_model();
-        if(isset($_POST['submit']))
-        {
-            Model_base::map_objects($agency, $_POST);
-            $data = array_merge($data,$_POST);
-
-            //echo json_encode($result);
-            //var_dump($data);
-        }
+        $agency->search = $search;
+        $agency->display = $display;
+        $agency->page = $page;
+        $agency->search_by = $search_by;
+        $agency->agency_type_id = $agency_type_id;
 
         $agency->contact_type = $this->contact_type;
         $result = $agency->gets($agency);
         if($result->success)$data['agencies'] = $result->models;
+
+        $data['agency_type_id'] = $agency_type_id;
+
+        //Pagination
+        $data['display'] = $display;
+        $data['page'] = $page;
+        $data['search'] = $search;
+        $data['search_by'] = $search_by;
+        $data['pages'] = is_array($result->models)? ceil($result->models[0]->records / $display): 0;
+        $data['records'] = is_array($result->models)? $result->models[0]->records:0;
 
         $agency_type = new Agency_type_model();
         $result = $this->Agency_type_model->gets($agency_type);
@@ -108,10 +122,10 @@ class Agency extends My_Controller {
             $this->form_validation->set_rules('contact_id', 'Agency ID', 'trim|required|greater_than[0]');
             $this->form_validation->set_rules('contact_name', 'Agency Name', 'trim|required|min_length[2]|max_length[100]');
             //$this->form_validation->set_rules('contact_code', 'Agency Code', 'trim|required|min_length[2]|max_length[100]');
-            $this->form_validation->set_rules('phone_number', 'Phone Number', 'trim|required|min_length[9]|max_length[100]');
+            //$this->form_validation->set_rules('phone_number', 'Phone Number', 'trim|required|min_length[9]|max_length[100]');
             $this->form_validation->set_rules('agency_type_id', 'Agency Type', 'required|greater_than[0]');
             $this->form_validation->set_rules('country_id', 'Country', 'required|greater_than[0]');
-            $this->form_validation->set_rules('province_city_id', 'Province/City', 'required|greater_than[0]');
+            //$this->form_validation->set_rules('province_city_id', 'Province/City', 'required|greater_than[0]');
             //$this->form_validation->set_rules('district_khan_id', 'District/Khan', 'required|greater_than[0]');
             //$this->form_validation->set_rules('commune_sangkat_id', 'Commune/Sangkat', 'required|greater_than[0]');
 
@@ -119,6 +133,7 @@ class Agency extends My_Controller {
             {
                 $agency_model = new Contact_model();
                 Model_base::map_objects($agency_model, $_POST);
+                $agency_model->contact_type = $this->contact_type;
 
                 //update photo
                 if(!$this->upload_image($agency_model))
@@ -177,25 +192,17 @@ class Agency extends My_Controller {
         }
         else
         {
-            $json = $this->get_json_object();
-            if($json===true)
+
+            $model = new Contact_model();
+            $model->contact_id = $agency_id;
+            $result = $this->Contact_model->get($model);
+            if($result->success)
             {
-                $model = new Contact_model();
-                $model->contact_id = $agency_id;
-                $result = $this->Contact_model->get($model);
-                if($result->success)
-                {
-                    $agency = $result->model;
-                }
-                else
-                {
-                    $this->show_404(); return;
-                }
+                $agency = $result->model;
             }
             else
             {
-                $agency = new Contact_model();
-                Model_base::map_objects($agency, $json, true);
+                $this->show_404(); return;
             }
 
             if (isset($agency->photo) && $agency->photo != '')
@@ -206,6 +213,11 @@ class Agency extends My_Controller {
             {
                 $agency->photo_path = $this->get_logo_image();
             }
+
+//            $agency_type = new Agency_type_model();
+//            $agency_type->agency_type_id= $agency->agency_type_id;
+//            $result = $this->Agency_type_model->get($agency_type);
+//            if($result->success) $agency->agency_type_name = $result->model->agency_type_name;
 
             $address = $this->get_address($agency);
 
@@ -229,10 +241,10 @@ class Agency extends My_Controller {
         {
             $this->form_validation->set_rules('contact_name', 'Agency Name', 'trim|required|min_length[2]|max_length[100]');
             //$this->form_validation->set_rules('contact_code', 'Agency Code', 'trim|required|min_length[2]|max_length[100]');
-            $this->form_validation->set_rules('phone_number', 'Phone Number', 'trim|required|min_length[9]|max_length[100]');
+            //$this->form_validation->set_rules('phone_number', 'Phone Number', 'trim|required|min_length[9]|max_length[100]');
             $this->form_validation->set_rules('agency_type_id', 'Agency Type', 'required|greater_than[0]');
             $this->form_validation->set_rules('country_id', 'Country', 'required|greater_than[0]');
-            $this->form_validation->set_rules('province_city_id', 'Province/City', 'required|greater_than[0]');
+            //$this->form_validation->set_rules('province_city_id', 'Province/City', 'required|greater_than[0]');
             //$this->form_validation->set_rules('district_khan_id', 'District/Khan', 'required|greater_than[0]');
             //$this->form_validation->set_rules('commune_sangkat_id', 'Commune/Sangkat', 'required|greater_than[0]');
 
@@ -240,6 +252,7 @@ class Agency extends My_Controller {
             {
                 $agency_model = new Contact_model();
                 Model_base::map_objects($agency_model, $_POST);
+                $agency_model->contact_type = $this->contact_type;
 
                 //update photo
                 if(!$this->upload_image($agency_model))

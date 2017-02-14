@@ -1,47 +1,47 @@
 <?php
 
 //menu group general items
-$general_items = array
-(
-    'company'=>'company',
-    'recruiter'=>'recruiter',
-    'employee'=>'employee',
-    'location'=>'location',
-    'nationality'=>'nationality',
-    'register type'=>'register type',
-    'document type'=>'document type',
-    'service type'=>'service type',
-    'timetable'=>'timetable',
-    'holiday'=>'holiday',
-    'permission type'=>'permission type',
-    'chart of account'=>'chart of account'
-);
-
-$user_items = array(
-    'user group'=>'user group',
-    'user'=>'user'
-);
-$operating_items = array(
-    'registration'=>'registration',
-    'documentation'=>'documentation'
-);
-$accounting_items = array(
-    'general journal'=>'general journal',
-    'bill'=>'bill',
-    'pay bill'=>'pay bill',
-    'invoice'=>'invoice',
-    'receipt'=>'receipt'
-);
-$payroll_items = array(
-    'employee schedule'=>'employee schedule',
-    'attendance'=>'attendance',
-    'monthly payroll'=>'monthly payroll'
-);
-$reporting_items = array(
-    'operating reports'=>'operating reports',
-    'accounting reports'=>'accounting reports',
-    'payroll reports'=>'payroll reports'
-);
+//$general_items = array
+//(
+//    'company'=>'company',
+//    'recruiter'=>'recruiter',
+//    'employee'=>'employee',
+//    'location'=>'location',
+//    'nationality'=>'nationality',
+//    'register type'=>'register type',
+//    'document type'=>'document type',
+//    'service type'=>'service type',
+//    'timetable'=>'timetable',
+//    'holiday'=>'holiday',
+//    'permission type'=>'permission type',
+//    'chart of account'=>'chart of account'
+//);
+//
+//$user_items = array(
+//    'user group'=>'user group',
+//    'user'=>'user'
+//);
+//$operating_items = array(
+//    'registration'=>'registration',
+//    'documentation'=>'documentation'
+//);
+//$accounting_items = array(
+//    'general journal'=>'general journal',
+//    'bill'=>'bill',
+//    'pay bill'=>'pay bill',
+//    'invoice'=>'invoice',
+//    'receipt'=>'receipt'
+//);
+//$payroll_items = array(
+//    'employee schedule'=>'employee schedule',
+//    'attendance'=>'attendance',
+//    'monthly payroll'=>'monthly payroll'
+//);
+//$reporting_items = array(
+//    'operating reports'=>'operating reports',
+//    'accounting reports'=>'accounting reports',
+//    'payroll reports'=>'payroll reports'
+//);
 
 ?>
 
@@ -272,158 +272,166 @@ desired effect
             <ul class="sidebar-menu">
                 <li class="header">Main Menu</li>
                 <!-- Optionally, you can add icons to the links -->
-                <li <?php if( $this->Menu=='' || $this->Menu=='home') echo 'class="active"'; ?> >
+                <li >
                     <a href="#home"><i class="fa fa-qrcode"></i> <span>Dashboard</span></a>
                 </li>
-                <li class="treeview <?php if(array_key_exists($this->Menu, $general_items)) echo 'active'; ?>">
-                    <a href="#">
-                        <i class="fa fa-gear"></i> <span>General</span> <i class="fa fa-angle-left pull-right"></i>
-                    </a>
-                    <ul class="treeview-menu <?php if(array_key_exists($this->Menu, $general_items)) echo 'menu-open'; ?>" <?php if(array_key_exists($this->Menu, $general_items)) echo 'style="display: block;"'; ?> >
-
-                        <!-- Company and partner -->
-                        <li <?php if($this->Menu=='company') echo 'class="active"'; ?> >
-                            <a href="#company"><i class="fa fa fa-bank"></i> <span>Company & Partner</span></a>
-                        </li>
-                        <!-- General setup -->
-                        <li <?php if($this->Menu=='location') echo 'class="active"'; ?> >
-                            <a href="#location"><i class="fa fa-map-marker"></i> <span>Location</span></a>
-                        </li>
-                        <li <?php if($this->Menu=='nationality') echo 'class="active"'; ?> >
-                            <a href="#nationality"><i class="fa fa-flag"></i> <span>Nationality</span></a>
-                        </li>
-                        <li <?php if($this->Menu=='border_crossings') echo 'class="active"'; ?> >
-                            <a href="#border_crossings"><i class="fa fa-arrows"></i> <span>Border Crossings</span></a>
-                        </li>
-
-                        <!-- Register -->
-                        <li <?php if($this->Menu=='agency type') echo 'class="active"'; ?> >
-                            <a href="#agency_type"><i class="fa fa-at"></i> <span>Agency Type</span></a>
-                        </li>
-                        <li <?php if($this->Menu=='register type') echo 'class="active"'; ?> >
-                            <a href="#register_type"><i class="fa fa-registered"></i> <span>Register Type</span></a>
-                        </li>
-                        <li <?php if($this->Menu=='document type') echo 'class="active"'; ?> >
-                            <a href="#document_type"><i class="fa fa-folder-open"></i> <span>Document Type</span></a>
-                        </li>
-                        <li <?php if($this->Menu=='service type') echo 'class="active"'; ?> >
-                            <a href="#service_type"><i class="fa fa-fire"></i> <span>Service Type</span></a>
-                        </li>
-                        <li <?php if($this->Menu=='cancel type') echo 'class="active"'; ?> >
-                            <a href="#cancel_type"><i class="fa fa-ban"></i> <span>Cancel Type</span></a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="treeview <?php if(array_key_exists($this->Menu, $user_items)) echo 'active'; ?>">
+                <li class="treeview">
                     <a href="#">
                         <i class="fa fa-shield"></i> <span>Security</span> <i class="fa fa-angle-left pull-right"></i>
                     </a>
-                    <ul class="treeview-menu <?php if(array_key_exists($this->Menu, $user_items)) echo 'menu-open'; ?>" <?php if(array_key_exists($this->Menu, $user_items)) echo 'style="display: block;"'; ?> >
+                    <ul class="treeview-menu">
                         <li>
                             <a href="#user_group"><i class="fa fa-share-alt"></i> <span>User Group</span></a>
                         </li>
-                        <li <?php if($this->Menu=='user group') echo 'class="active"'; ?> >
+                        <li>
                             <a href="#user_role"><i class="fa fa-gears"></i> <span>User Role</span></a>
                         </li>
-                        <li <?php if($this->Menu=='user') echo 'class="active"'; ?> >
+                        <li>
                             <a href="#user"><i class="fa fa-user-plus"></i> <span>User</span></a>
                         </li>
                     </ul>
                 </li>
-                <li class="treeview <?php if(array_key_exists($this->Menu, $operating_items)) echo 'active'; ?>">
+                <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-spinner"></i> <span>Operating</span> <i class="fa fa-angle-left pull-right"></i>
+                        <i class="fa fa-gear"></i> <span>General</span> <i class="fa fa-angle-left pull-right"></i>
                     </a>
-                    <ul class="treeview-menu <?php if(array_key_exists($this->Menu, $operating_items)) echo 'menu-open'; ?>" <?php if(array_key_exists($this->Menu, $operating_items)) echo 'style="display: block;"'; ?> >
-                        <li <?php if($this->Menu=='agency') echo 'class="active"'; ?> >
+                    <ul class="treeview-menu">
+
+                        <!-- Company and partner -->
+                        <li >
+                            <a href="#company"><i class="fa fa fa-bank"></i> <span>Company & Partner</span></a>
+                        </li>
+                        <li >
                             <a href="#agency"><i class="fa fa-industry"></i> <span>Agency</span></a>
                         </li>
-                        <li <?php if($this->Menu=='recruiter') echo 'class="active"'; ?> >
+                        <li >
+                            <a href="#employer"><i class="fa fa-industry"></i> <span>Employer</span></a>
+                        </li>
+                        <li >
                             <a href="#recruiter"><i class="fa fa-user"></i> <span>Recruiter</span></a>
                         </li>
-                        <li <?php if($this->Menu=='register') echo 'class="active"'; ?> >
-                            <a href="#register/manage_register/3"><i class="fa fa-keyboard-o"></i> <span>Registration (Thai)</span></a>
+                        <!-- General setup -->
+                        <li>
+                            <a href="#location"><i class="fa fa-map-marker"></i> <span>Location</span></a>
                         </li>
-                        <li <?php if($this->Menu=='register') echo 'class="active"'; ?> >
-                            <a href="#register/manage_register/4"><i class="fa fa-keyboard-o"></i> <span>Registration (Malaysia)</span></a>
+                        <li >
+                            <a href="#nationality"><i class="fa fa-flag"></i> <span>Nationality</span></a>
                         </li>
-                        <li <?php if($this->Menu=='arrival_departure') echo 'class="active"'; ?> >
-                            <a href="#arrival_departure"><i class="fa fa-send-o"></i> <span>Arrival Departure</span></a>
+                        <li >
+                            <a href="#border_crossings"><i class="fa fa-arrows"></i> <span>Border Crossings</span></a>
+                        </li>
+
+                        <!-- Register -->
+                        <li >
+                            <a href="#agency_type"><i class="fa fa-at"></i> <span>Agency Type</span></a>
+                        </li>
+                        <li>
+                            <a href="#register_type"><i class="fa fa-registered"></i> <span>Register Type</span></a>
+                        </li>
+                        <li>
+                            <a href="#document_type"><i class="fa fa-folder-open"></i> <span>Document Type</span></a>
+                        </li>
+                        <li >
+                            <a href="#service_type"><i class="fa fa-fire"></i> <span>Service Type</span></a>
+                        </li>
+                        <li >
+                            <a href="#cancel_type"><i class="fa fa-ban"></i> <span>Cancel Type</span></a>
                         </li>
                     </ul>
                 </li>
-                <li class="treeview <?php if(array_key_exists($this->Menu, $accounting_items)) echo 'active'; ?>">
+
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-spinner"></i> <span>Operating</span> <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu" >
+                        <li>
+                            <a href="#register/manage_register/3"><i class="fa fa-keyboard-o"></i> <span>Registration (Thai)</span></a>
+                        </li>
+                        <li >
+                            <a href="#register/manage_register/4"><i class="fa fa-keyboard-o"></i> <span>Registration (Malaysia)</span></a>
+                        </li>
+                        <!--
+                        <li  >
+                            <a href="#arrival_departure"><i class="fa fa-send-o"></i> <span>Arrival Departure</span></a>
+                        </li>
+                        -->
+                    </ul>
+                </li>
+                <!--
+                <li class="treeview ">
                     <a href="#">
                         <i class="fa fa-money"></i> <span>Accounting</span> <i class="fa fa-angle-left pull-right"></i>
                     </a>
-                    <ul class="treeview-menu <?php if(array_key_exists($this->Menu, $accounting_items)) echo 'menu-open'; ?>" <?php if(array_key_exists($this->Menu, $accounting_items)) echo 'style="display: block;"'; ?> >
-                        <!-- Accounting -->
-                        <li <?php if($this->Menu=='chart of account') echo 'class="active"'; ?> >
+                    <ul class="treeview-menu " >
+                        <!-- Accounting --><!--
+                        <li >
                             <a href="#"><i class="fa fa-user-plus"></i> <span>Chart of Account</span></a>
                         </li>
-                        <li <?php if($this->Menu=='general journal') echo 'class="active"'; ?> >
+                        <li >
                             <a href="#"><i class="fa fa-user-plus"></i> <span>General Journal</span></a>
                         </li>
-                        <li <?php if($this->Menu=='general journal') echo 'class="active"'; ?> >
+                        <li >
                             <a href="#"><i class="fa fa-user-plus"></i> <span>General Ledger</span></a>
                         </li>
-                        <li <?php if($this->Menu=='bill') echo 'class="active"'; ?> >
+                        <li  >
                             <a href="#"><i class="fa fa-user-plus"></i> <span>Bill</span></a>
                         </li>
-                        <li <?php if($this->Menu=='pay bill') echo 'class="active"'; ?> >
+                        <li >
                             <a href="#"><i class="fa fa-user-plus"></i> <span>Bill Payment</span></a>
                         </li>
-                        <li <?php if($this->Menu=='invoice') echo 'class="active"'; ?> >
+                        <li >
                             <a href="#"><i class="fa fa-user-plus"></i> <span>Invoice</span></a>
                         </li>
-                        <li <?php if($this->Menu=='receipt') echo 'class="active"'; ?> >
+                        <li >
                             <a href="#"><i class="fa fa-user-plus"></i> <span>Invoice Payment</span></a>
                         </li>
                     </ul>
                 </li>
-                <li class="treeview <?php if(array_key_exists($this->Menu, $payroll_items)) echo 'active'; ?>">
+                <li class="treeview ">
                     <a href="#">
                         <i class="fa fa-file-powerpoint-o"></i> <span>Employee & Payroll</span> <i class="fa fa-angle-left pull-right"></i>
                     </a>
-                    <ul class="treeview-menu <?php if(array_key_exists($this->Menu, $payroll_items)) echo 'menu-open'; ?>" <?php if(array_key_exists($this->Menu, $payroll_items)) echo 'style="display: block;"'; ?> >
-                        <!-- Employee and payroll-->
-                        <li <?php if($this->Menu=='timetable') echo 'class="active"'; ?> >
+                    <ul class="treeview-menu "  >-->
+                        <!-- Employee and payroll--><!--
+                        <li >
                             <a href="#"><i class="fa fa-user-plus"></i> <span>Timetable</span></a>
                         </li>
-                        <li <?php if($this->Menu=='holiday') echo 'class="active"'; ?> >
+                        <li >
                             <a href="#"><i class="fa fa-user-plus"></i> <span>Holiday List</span></a>
                         </li>
-                        <li <?php if($this->Menu=='permission type') echo 'class="active"'; ?> >
+                        <li >
                             <a href="#"><i class="fa fa-user-plus"></i> <span>Permission Type</span></a>
                         </li>
-                        <li <?php if($this->Menu=='employee') echo 'class="active"'; ?> >
+                        <li >
                             <a href="#"><i class="fa fa-user-plus"></i> <span>Employee</span></a>
                         </li>
-                        <li <?php if($this->Menu=='employee schedule') echo 'class="active"'; ?> >
+                        <li >
                             <a href="#"><i class="fa fa-user-plus"></i> <span>Employee Schedule</span></a>
                         </li>
-                        <li <?php if($this->Menu=='attendance') echo 'class="active"'; ?> >
+                        <li >
                             <a href="#"><i class="fa fa-user-plus"></i> <span>Attendance & Permission</span></a>
                         </li>
-                        <li <?php if($this->Menu=='monthly payroll') echo 'class="active"'; ?> >
+                        <li >
                             <a href="#"><i class="fa fa-user-plus"></i> <span>Monthly Payroll</span></a>
                         </li>
                     </ul>
-                </li>
-                <li class="treeview <?php if(array_key_exists($this->Menu, $reporting_items)) echo 'active'; ?>">
+                </li>-->
+                <li class="treeview ">
                     <a href="#">
                         <i class="fa fa-file-text-o"></i> <span>Reporting</span> <i class="fa fa-angle-left pull-right"></i>
                     </a>
-                    <ul class="treeview-menu <?php if(array_key_exists($this->Menu, $reporting_items)) echo 'menu-open'; ?>" <?php if(array_key_exists($this->Menu, $reporting_items)) echo 'style="display: block;"'; ?> >
-                        <li <?php if($this->Menu=='operating reports') echo 'class="active"'; ?> >
+                    <ul class="treeview-menu "  >
+                        <li >
                             <a href="#operating_reports"> <i class="fa fa-file-image-o"></i> Operating reports</a>
                         </li>
-                        <li <?php if($this->Menu=='accounting reports') echo 'class="active"'; ?> >
+                        <!--
+                        <li  >
                             <a href="#"> <i class="fa fa-file-text"></i> Accounting Reports </a>
                         </li>
-                        <li <?php if($this->Menu=='payroll reports') echo 'class="active"'; ?> >
+                        <li  >
                             <a href="#"> <i class="fa fa-file-powerpoint-o"></i> Payroll Reports</a>
-                        </li>
+                        </li>-->
                     </ul>
                 </li>
 

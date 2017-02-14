@@ -58,7 +58,7 @@
                             <select class="select2" id="agency_type_id" name="agency_type_id" data-placeholder="--Select--" style="width: 100%;">
                                 <option></option>
                                 <?php if($agency->agency_type_id!=0){?>
-                                    <option value="<?php echo $agency->agency_type_id; ?>" selected="selected"><?php echo $agency->agency_type;?></option>
+                                    <option value="<?php echo $agency->agency_type_id; ?>" selected="selected"><?php echo $agency->agency_type_name;?></option>
                                 <?php }?>
                             </select>
                             <a href="#" class="input-group-addon btn btn-primary" id="btn-new-agency_type" data-toggle="tooltip" title="New Agency Type">
@@ -73,15 +73,6 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Phone number" value="<?php echo $agency->phone_number; ?>">
-                        </div>
-                    </div>
-                    <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                        <label for="phone_number_2">Phone Number 2</label>
-                        <div class="input-group">
-                            <div class="input-group-addon">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                            <input type="text" class="form-control" id="phone_number_2" name="phone_number_2" placeholder="Phone number" value="<?php echo $agency->phone_number_2; ?>">
                         </div>
                     </div>
                     <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -104,9 +95,6 @@
                     </div>
 
                     <input type="hidden" id="contact_id" name="contact_id" value="<?php echo isset($agency->contact_id)? $agency->contact_id:0;?>"/>
-                    <input type="hidden" id="contact_type" name="contact_type" value="<?php echo isset($agency->contact_type)? $agency->contact_type:'';?>"/>
-                    <input type="hidden" id="created_date" name="created_date" value="<?php echo isset($agency->created_date)? $agency->created_date:0;?>" />
-                    <input type="hidden" id="is_deletable" name="is_deletable" value="<?php echo isset($agency->is_deletable)? $agency->is_deletable:0;?>" />
                     <input type="hidden" id="contact_code" name="contact_code" value="<?php echo $agency->contact_code; ?>">
 
                 </div>
@@ -220,6 +208,8 @@
                 },
                 success: function(data, status, xhr)
                 {
+                    //alert(data);
+
                     if(data==521){
                         go_to_login();
                     }

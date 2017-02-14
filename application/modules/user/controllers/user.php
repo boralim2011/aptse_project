@@ -22,24 +22,47 @@ class User extends My_Controller {
     {
         if(!isset($_POST['ajax']) && !isset($_POST['submit'])) {  $this->show_404();return; }
 
-        $data['users'] = array();
+        $search = isset($_POST['search'])?$_POST['search']:'';
+        $page = isset($_POST['page']) ? $_POST['page']: 1;
+        $display = isset($_POST['display']) ? $_POST['display']: 10;
+        $search_by = isset($_POST['search_by'])? $_POST['search_by']: 'user_name';
+
+        $user_group_id = isset($_POST['user_group_id']) ? $_POST['user_group_id']: 0;
+        $user_role_id = isset($_POST['user_role_id']) ? $_POST['user_role_id']: 0;
 
         $user = new User_model();
-        if(isset($_POST['submit']))
-        {
-            Model_base::map_objects($user, $_POST);
-            $data = array_merge($data,$_POST);
+        $user->search = $search;
+        $user->display = $display;
+        $user->page = $page;
 
-            //echo json_encode($result);
-            //var_dump($data);
-        }
+        $user->search_by = $search_by;
+        $user->user_group_id = $user_group_id;
+        $user->user_role_id = $user_role_id;
 
+        $data['users'] = array();
         $result = $user->gets($user);
         if($result->success)$data['users'] = $result->models;
+
+        $data['user']=$user;
+
+        $data['user_group_id'] = $user_group_id;
+        $data['user_role_id'] = $user_role_id;
+
+        //Pagination
+        $data['display'] = $display;
+        $data['page'] = $page;
+        $data['search'] = $search;
+        $data['search_by'] = $search_by;
+        $data['pages'] = is_array($result->models)? ceil($result->models[0]->records / $display): 0;
+        $data['records'] = is_array($result->models)? $result->models[0]->records:0;
 
         $user_group = new User_group_model();
         $result = $this->User_group_model->gets($user_group);
         if($result->success) $data['user_groups'] = $result->models;
+
+        $user_role = new User_role_model();
+        $result = $this->User_role_model->gets($user_role);
+        if($result->success) $data['user_roles'] = $result->models;
 
         $this->load->view('user/manage_user', $data);
 
@@ -65,6 +88,49 @@ class User extends My_Controller {
         return true;
     }
 
+    function view_detail($user_id = 0)
+    {
+        if(!isset($_POST['ajax'])) {  $this->show_404();return; }
+
+        $data=array();
+
+        $model = new User_model();
+        $model->user_id = $user_id;
+        $result = $this->User_model->get($model);
+        if($result->success)
+        {
+            $user = $result->model;
+        }
+        else
+        {
+            $this->show_404(); return;
+        }
+
+        $data['title'] = "View User";
+        $data['readonly'] = true;
+        $data['url'] = base_url()."user/view_detail";
+        $data['user'] = $user;
+
+        if (isset($user->image) && $user->image != '')
+        {
+            $user->photo_path = $this->get_user_image_site().$user->image;
+        }
+        else
+        {
+            $user->photo_path = $this->default_user_image();
+        }
+
+        $user_role = new User_role_model();
+        $result = $this->User_role_model->gets($user_role);
+        if($result->success) $data['user_roles'] = $result->models;
+
+        $result = $this->User_model->get_permission($user);
+        if($result->success) $data['permission'] = $result->models;
+
+        $this->load->view('user/view_user', $data);
+
+    }
+
     function edit($user_id = 0)
     {
         if(!isset($_POST['ajax']) && !isset($_POST['submit'])) {  $this->show_404();return; }
@@ -73,30 +139,18 @@ class User extends My_Controller {
 
         if($this->input->post('submit'))
         {
-            $data['user_id'] = $this->input->post('user_id');
-            $data['user_name'] = $this->input->post('user_name');
-            $data['email'] = $this->input->post('email');
-            $data['password'] = $this->input->post('password');
-            $data['user_group_id'] = $this->input->post('user_group');
-            $data['contact_id'] = $this->input->post('contact_id');
-            $data['is_active'] = isset($_POST['is_active'])?1:0;
-            $data['created_date'] = $this->input->post('created_date');
-
-            $data = $this->security->xss_clean($data);
 
             $this->form_validation->set_rules('user_id', 'User ID', 'trim|required|greater_than[0]');
             $this->form_validation->set_rules('user_name', 'User Name', 'trim|required|min_length[2]|max_length[100]');
             $this->form_validation->set_rules('email', 'Email', 'trim|required|min_length[3]|max_length[100]');
-            //$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[3]|max_length[20]');
-            //$this->form_validation->set_rules('confirm_password', 'Confirm Password', 'trim|required|min_length[3]|max_length[20]|matches[password]');
-            $this->form_validation->set_rules('user_group', 'User Type', 'required|greater_than[0]');
+            $this->form_validation->set_rules('user_group_id', 'User Group', 'required|greater_than[0]');
             //$this->form_validation->set_rules('is_active', 'Is active', 'required');
-
 
             if ($this->form_validation->run())
             {
                 $user_model = new User_model();
-                Model_base::map_objects($user_model, $data);
+                Model_base::map_objects($user_model, $_POST);
+                $user_model->is_active = isset($_POST['is_active'])?1:0;
 
                 //update photo
                 if(!$this->upload_image($user_model))
@@ -151,26 +205,18 @@ class User extends My_Controller {
         }
         else
         {
-            $json = $this->get_json_object();
-            if($json===true)
+            $model = new User_model();
+            $model->user_id = $user_id;
+            $result = $this->User_model->get($model);
+            if($result->success)
             {
-                $model = new User_model();
-                $model->user_id = $user_id;
-                $result = $this->User_model->get($model);
-                if($result->success)
-                {
-                    $user = $result->model;
-                }
-                else
-                {
-                    $this->show_404(); return;
-                }
+                $user = $result->model;
             }
             else
             {
-                $user = new User_model();
-                Model_base::map_objects($user, $json, true);
+                $this->show_404(); return;
             }
+
             $data['title'] = "Edit User";
             $data['readonly'] = true;
             $data['url'] = base_url()."user/edit";
@@ -204,29 +250,23 @@ class User extends My_Controller {
 
         if($this->input->post('submit'))
         {
-            $data['user_id'] = $this->input->post('user_id');
-            $data['user_name'] = $this->input->post('user_name');
-            $data['email'] = $this->input->post('email');
-            $data['password'] = $this->input->post('password');
-            $data['user_group_id'] = $this->input->post('user_group');
-            $data['contact_id'] = $this->input->post('contact_id');
-            $data['is_active'] = isset($_POST['is_active'])?1:0;
-            $data['created_date'] = $this->input->post('created_date');
-
-            $data = $this->security->xss_clean($data);
 
             $this->form_validation->set_rules('user_name', 'User Name', 'trim|required|min_length[2]|max_length[100]');
             $this->form_validation->set_rules('email', 'Email', 'trim|required|min_length[3]|max_length[100]');
-            $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[3]|max_length[20]');
-            $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'trim|required|min_length[3]|max_length[20]|matches[password]');
-            $this->form_validation->set_rules('user_group', 'User Type', 'required|greater_than[0]');
+            if(isset($_POST['user_id']) && $_POST['user_id']>0)
+            {
+                $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[3]|max_length[20]');
+                $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'trim|required|min_length[3]|max_length[20]|matches[password]');
+            }
+            $this->form_validation->set_rules('user_group_id', 'User Group', 'required|greater_than[0]');
             //$this->form_validation->set_rules('is_active', 'Is active', 'required');
 
 
             if ($this->form_validation->run())
             {
                 $user_model = new User_model();
-                Model_base::map_objects($user_model, $data);
+                Model_base::map_objects($user_model, $_POST);
+                $user_model->is_active = isset($_POST['is_active'])?1:0;
 
                 //update photo
                 if(!$this->upload_image($user_model))

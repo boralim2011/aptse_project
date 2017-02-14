@@ -11,12 +11,21 @@ class User_role_model extends Model_base
 
     public $user_role_id = 0;
     public $user_role_name = '';
-    public $is_deletable = 1;
+    //public $is_deletable = 1;
 
     function gets(User_role_model $model)
     {
-        $this->db->select("user_role.*, (select count(*) from permission p where p.user_role_id=user_role.user_role_id) as 'members'");
-        $this->db->like("user_role_name", "$model->user_role_name");
+        $display = isset($model->display)? $model->display:10;
+        $page = isset($model->page)?$model->page:1;
+        $offset = ($page-1) * $display;
+
+        $user_role_name = $model->user_role_name;
+
+        $this->db->select("user_role.*, (select count(*) from permission p where p.user_role_id=user_role.user_role_id) as 'members', ".
+            "(select count(*) from user_role where user_role_name like '%$user_role_name%') 'records' "
+        );
+        $this->db->like("user_role_name", "$user_role_name");
+        $this->db->limit($display, $offset);
         $query = $this->db->get('user_role');
 
         if(!$query || $query->num_rows()== 0)
@@ -110,6 +119,9 @@ class User_role_model extends Model_base
         {
             return Message_result::error_message('User type name is exist');
         }
+
+        $result = $this->get($model);
+        if(!$result->success || $result->model->is_editable==0) return Message_result::error_message('User role cannot be edited');
 
         $this->db->where('user_role_id', $model->user_role_id);
 
