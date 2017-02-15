@@ -59,14 +59,24 @@
                     <td class="text-center"><?php echo $dob;?></td>
                     <td class="text-center"><?php echo isset($row->passport_no)? $row->passport_no:"";?></td>
                     <td class="text-center"><?php echo isset($row->ocwc_no)? $row->ocwc_no:"";?></td>
-                    <td class="text-center"><?php echo isset($row->place_of_birth)? $row->place_of_birth:"";?></td>
+                    <td class="text-center"><?php echo isset($row->contact_address)? $row->contact_address:"";?></td>
                     <td class="text-center" style="width: 200px; font-size: 9px; ">
-                        <?php echo $row->employer_name; ?>
-                        <span style="font-size: 8px;"><?php echo  isset($row->employer_address)? "<br>".$row->employer_address:"";?></span>
+                        <?php
+                            if($no==1)  echo $row->agency_name;
+                            if($records==1) echo "<br>";
+                            if($records==1 || $no>1){
+                            ?>
+                            <span style="font-size: 8px;"><?php echo  isset($row->agency_address)? $row->agency_address:"";?></span>
+                        <?php }?>
                     </td>
                     <td class="text-center" style="width: 200px; font-size: 9px; ">
-                        <?php echo $row->agency_name;?>
-                        <span style="font-size: 8px;"><?php echo isset($row->agency_address)? "<br>".$row->agency_address:"";?></span>
+                        <?php
+                            if($no==1)  echo $row->agency_name;
+                            if($records==1) echo "<br>";
+                            if($records==1 || $no>1){
+                            ?>
+                            <span style="font-size: 8px;"><?php echo  isset($row->agency_address)? $row->agency_address:"";?></span>
+                        <?php }?>
                     </td>
                 </tr>
             <?php
@@ -92,7 +102,7 @@
         </tr>
         <tr>
             <td></td>
-            <td style="width: 32px; text-align: center; font-family: 'Times New Roman'; font-size: 12px; padding-top: 10px;" >GENERAL DEPARTMENT OF LABOUR</td>
+            <td style="width: 32px; text-align: center; font-family: 'Times New Roman'; font-size: 12px; padding-top: 10px;" ></td>
         </tr>
         <tr>
             <td></td>

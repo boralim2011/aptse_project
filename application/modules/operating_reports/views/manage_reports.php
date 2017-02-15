@@ -27,8 +27,9 @@
                             <label>Select Report</label>
                             <select id="report_name" name="report_name" class="form-control select2" data-placeholder="--Select Report--"  style="width: 100%; display: none;">
                                 <option value="name_list_thai_report" <?php echo isset($report_name) && $report_name=='name_list_thai_report' ? 'selected="selected"':'';?> >Name List (Thai)</option>
+                                <option value="name_list_thai_director_report" <?php echo isset($report_name) && $report_name=='name_list_thai_director_report' ? 'selected="selected"':'';?> >Name List (Thai) for Director</option>
                                 <option value="mfa_list_thai_report" <?php echo isset($report_name) && $report_name=='mfa_list_thai_report' ? 'selected="selected"':'';?> >MFA List(Thai)</option>
-                                <option value="request_visa_list_thai_report" <?php echo isset($report_name) && $report_name=='request_visa_list_thai_report' ? 'selected="selected"':'';?> >Request Visa (Thai)</option>
+                                <option value="mfa_list_thai_director_report" <?php echo isset($report_name) && $report_name=='mfa_list_thai_director_report' ? 'selected="selected"':'';?> >MFA (Thai) for Director</option>
 <!--                                <option value="khmer_arrival_departure" --><?php //echo isset($report_name) && $report_name=='khmer_arrival_departure' ? 'selected="selected"':'';?><!-- >Arrival Departure (Khmer)</option>-->
 <!--                                <option value="thai_arrival_departure" --><?php //echo isset($report_name) && $report_name=='thai_arrival_departure' ? 'selected="selected"':'';?><!-- >Arrival Departure (Thai)</option>-->
                             </select>

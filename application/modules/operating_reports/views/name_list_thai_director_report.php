@@ -1,6 +1,4 @@
-
 <div class="report">
-    <br><br>
     <h4 class="text-center" style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold;">
         Name List of Cambodian Workers<br/>
         Working Place : <?php echo isset($employer_name)? $employer_name:"";?><br/>
@@ -29,6 +27,7 @@
                 $no++;
                 $date = strtotime($row->date_of_birth);
                 $dob = Date("d-m-Y",$date);
+
                 ?>
                 <tr>
                     <td class="text-center"><?php echo $no;?></td>
@@ -55,21 +54,13 @@
     <table width="100%">
         <tr>
             <td> </td>
-            <td width="360px" align="center" >​ Phnom Penh <span style="display: inline-block; width: 110px;"></span> <?php echo Date("Y");?> </td>
+            <td style="font-family:'Khmer OS System'; font-size: 12px; text-align: center; width: 360px;" >​ ធ្វើនៅរាជធានីភ្នំពេញ ថ្ងៃទី​  <span style="display: inline-block; width: 40px;"></span> ខែ <span style="display: inline-block; width: 50px;"></span> ឆ្នាំ  <?php echo Date("Y");?> </td>
         </tr>
         <tr>
             <td></td>
-            <td style="width: 32px; text-align: center; font-family: 'Times New Roman'; font-size: 12px; padding-top: 10px;" >GENERAL DEPARTMENT OF LABOUR</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td width="360px" align="center" >
-                <br/><br/><br/><br/>
-                Dr. SENG SAKDA<br/>
-                DIRECTOR GENERAL
-            </td>
+            <td style="width: 32px; text-align: center; font-family: 'Khmer OS Muol Light'; font-size: 14px; padding-top: 10px;" > អគ្គនាយក្រុមហ៊ុន </td>
         </tr>
     </table>
-
-
 </div>
+
+

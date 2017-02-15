@@ -70,19 +70,19 @@
                         ?>
                     </select>
                 </div>
-                <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                    <label>Employer</label>
-                    <select id="employer_id" name="employer_id" class="form-control select2" data-placeholder="--Select Employer--"  style="width: 100%;">
-                        <option value="0" <?php echo isset($employer_id) && $employer_id==0 ? 'selected="selected"':'';?> >All</option>
-                        <?php if(isset($employers) && is_array($employers))
-                            foreach($employers as $a){
-                                ?>
-                                <option value="<?php echo $a->contact_id;?>" <?php echo isset($employer_id) && $employer_id==$a->contact_id? 'selected="selected"':'';?> ><?php echo $a->contact_name;?></option>
-                            <?php
-                            }
-                        ?>
-                    </select>
-                </div>
+                <!--                <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">-->
+                <!--                    <label>Employer</label>-->
+                <!--                    <select id="employer_id" name="employer_id" class="form-control select2" data-placeholder="--Select Employer--"  style="width: 100%;">-->
+                <!--                        <option value="0" --><?php //echo isset($employer_id) && $employer_id==0 ? 'selected="selected"':'';?><!-- >All</option>-->
+                <!--                        --><?php //if(isset($employers) && is_array($employers))
+                //                            foreach($employers as $a){
+                //                                ?>
+                <!--                                <option value="--><?php //echo $a->contact_id;?><!--" --><?php //echo isset($employer_id) && $employer_id==$a->contact_id? 'selected="selected"':'';?><!-- >--><?php //echo $a->contact_name;?><!--</option>-->
+                <!--                            --><?php
+                //                            }
+                //                        ?>
+                <!--                    </select>-->
+                <!--                </div>-->
                 <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
                     <label>Recruiter</label>
                     <select id="recruiter_id" name="recruiter_id" class="form-control select2" data-placeholder="--Select Agency--"  style="width: 100%;">

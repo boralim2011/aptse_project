@@ -304,9 +304,9 @@ desired effect
                         <li >
                             <a href="#agency"><i class="fa fa-industry"></i> <span>Agency</span></a>
                         </li>
-                        <li >
-                            <a href="#employer"><i class="fa fa-industry"></i> <span>Employer</span></a>
-                        </li>
+<!--                        <li >-->
+<!--                            <a href="#employer"><i class="fa fa-industry"></i> <span>Employer</span></a>-->
+<!--                        </li>-->
                         <li >
                             <a href="#recruiter"><i class="fa fa-user"></i> <span>Recruiter</span></a>
                         </li>

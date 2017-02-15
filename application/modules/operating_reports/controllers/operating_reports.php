@@ -136,7 +136,7 @@ class Operating_reports extends My_Controller {
         $data = array_merge($data,(array)$contact);
 
         $data['report_no'] = isset($_POST['report_no'])?$_POST['report_no']:"";
-        $data['logo'] = $this->get_photo_site().'logo_mfa_thai.png';
+        $data['logo'] = $this->get_file_site().'logo_mfa_thai.png';
 
 
         if(isset($_POST['print']))

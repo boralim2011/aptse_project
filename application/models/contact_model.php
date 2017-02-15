@@ -260,7 +260,8 @@ class Contact_model extends Model_base
 
 
         $sql = "SELECT c.*, emp.contact_name employer_name, com.contact_name company_name, age.contact_name agency_name, ".
-            "age_add.address agency_address, emp_add.address employer_address, c_add.address place_of_birth ".
+            "age_add.address agency_address, emp_add.address employer_address, pob.address place_of_birth, ".
+            "c_add.address contact_address ".
             "FROM contact c ".
             "LEFT JOIN agency_type agt on c.agency_type_id=agt.agency_type_id ".
             "LEFT JOIN contact rec on c.recruiter_id=rec.contact_id and rec.contact_type='Recruiter' ".
@@ -269,7 +270,9 @@ class Contact_model extends Model_base
             "LEFT JOIN contact emp on c.employer_id=emp.contact_id and emp.contact_type='Employer' ".
             "LEFT JOIN contact_address age_add on age.contact_id=age_add.contact_id and age_add.address_key='contact' ".
             "LEFT JOIN contact_address emp_add on emp.contact_id=emp_add.contact_id and emp_add.address_key='contact' ".
-            "LEFT JOIN contact_address c_add on c.contact_id=c_add.contact_id and c_add.address_key='pob' ".
+            "LEFT JOIN contact_address pob on c.contact_id=pob.contact_id and pob.address_key='pob' ".
+            "LEFT JOIN contact_address c_add on c.contact_id=c_add.contact_id and c_add.address_key='contact' ".
+            //"LEFT JOIN contact_address f_add on c.contact_id=f_add.contact_id and f_add.address_key='parent_address' ".
             "LEFT JOIN location tol on c.to_country_id=tol.location_id and tol.location_type_id=1 ".
             "LEFT JOIN register_type ret on c.register_type_id=ret.register_type_id ".
             "LEFT JOIN document_type dot on c.document_type_id=dot.document_type_id ".

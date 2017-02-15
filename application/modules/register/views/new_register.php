@@ -455,15 +455,15 @@
                             <label>OCWC NO</label>
                             <input type="text" class="form-control" id="ocwc_no" name="ocwc_no" placeholder="" value="<?php echo $contact->ocwc_no; ?>">
                         </div>
-                        <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <label>Employer</label>
-                            <select class="select2" id="employer_id" name="employer_id" data-placeholder="--Select--" style="width: 100%;">
-                                <option></option>
-                                <?php if($contact->employer_id!=0){?>
-                                    <option value="<?php echo $contact->employer_id; ?>" selected="selected"><?php echo $contact->employer_name;?></option>
-                                <?php }?>
-                            </select>
-                        </div>
+                        <!--                        <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">-->
+                        <!--                            <label>Employer</label>-->
+                        <!--                            <select class="select2" id="employer_id" name="employer_id" data-placeholder="--Select--" style="width: 100%;">-->
+                        <!--                                <option></option>-->
+                        <!--                                --><?php //if($contact->employer_id!=0){?>
+                        <!--                                    <option value="--><?php //echo $contact->employer_id; ?><!--" selected="selected">--><?php //echo $contact->employer_name;?><!--</option>-->
+                        <!--                                --><?php //}?>
+                        <!--                            </select>-->
+                        <!--                        </div>-->
 
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
                             <label>Employer's Date</label>
