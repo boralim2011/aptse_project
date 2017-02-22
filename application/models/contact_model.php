@@ -25,7 +25,7 @@ class Contact_model extends Model_base
     public $nick_name;
     public $gender;
     public $date_of_birth;
-    public $nationality_id;
+    public $nationality_id=0;
     public $father_name;
     public $father_name_kh;
     public $mother_name;
@@ -51,20 +51,20 @@ class Contact_model extends Model_base
     public $is_deletable = 1;
     public $recruitment_fee_rate = 0;
     public $is_fixed_rate=0;
-    public $agency_type_id;
+    public $agency_type_id=0;
 
 
     public $worker_code;
     public $register_date;
-    public $recruiter_id;
-    public $company_id;
-    public $agency_id;
-    public $service_type_id;
-    public $register_type_id;
+    public $recruiter_id=0;
+    public $company_id=0;
+    public $agency_id=0;
+    public $service_type_id=0;
+    public $register_type_id=0;
     public $id_card_no;
     public $id_card_issue_date;
     public $id_card_expired_date;
-    public $to_country_id;
+    public $to_country_id=0;
 
     public $passport_no;
     public $passport_issue_date;
@@ -74,7 +74,7 @@ class Contact_model extends Model_base
     public $date_of_mofa; //Ministry of Foreign Affair
 
     public $date_of_send_document;
-    public $document_type_id;
+    public $document_type_id=0;
     public $date_of_send_bio_scan;
     public $date_of_send_medical_checkup_sd;
 
@@ -82,7 +82,7 @@ class Contact_model extends Model_base
     public $work_permit_date;
     public $name_list_date;
     public $date_of_employer;
-    public $employer_id;
+    //public $employer_id=0;
     //public $employer_name;
     //public $employer_address;
     //public $employer_nirc;
@@ -103,7 +103,7 @@ class Contact_model extends Model_base
 
     public $is_cancel=0;
     public $canceled_date;
-    public $cancel_type_id;
+    public $cancel_type_id=0;
     public $canceled_reason;
     public $register_key="";
     public $ocwc_no;
@@ -140,7 +140,7 @@ class Contact_model extends Model_base
         $to_country_id = isset($contact->to_country_id)? $contact->to_country_id:0;
         $company_id = isset($contact->company_id)? $contact->company_id:0;
         $agency_id = isset($contact->agency_id)? $contact->agency_id:0;
-        $employer_id = isset($contact->employer_id)? $contact->employer_id:0;
+        //$employer_id = isset($contact->employer_id)? $contact->employer_id:0;
         $agency_type_id = isset($contact->agency_type_id)? $contact->agency_type_id:0;
         $register_type_id = isset($contact->register_type_id)? $contact->register_type_id:0;
         $document_type_id = isset($contact->document_type_id)? $contact->document_type_id:0;
@@ -163,7 +163,7 @@ class Contact_model extends Model_base
                 "LEFT JOIN contact rec on c.recruiter_id=rec.contact_id and rec.contact_type='Recruiter' ".
                 "LEFT JOIN contact com on c.company_id=com.contact_id and com.contact_type='Company' ".
                 "LEFT JOIN contact age on c.agency_id=age.contact_id and age.contact_type='Agency' ".
-                "LEFT JOIN contact emp on c.employer_id=emp.contact_id and emp.contact_type='Employer' ".
+                //"LEFT JOIN contact emp on c.employer_id=emp.contact_id and emp.contact_type='Employer' ".
                 "LEFT JOIN location tol on c.to_country_id=tol.location_id and tol.location_type_id=1 ".
                 "LEFT JOIN register_type ret on c.register_type_id=ret.register_type_id ".
                 "LEFT JOIN document_type dot on c.document_type_id=dot.document_type_id ".
@@ -172,7 +172,7 @@ class Contact_model extends Model_base
                 "AND $to_country_id in (0, c.to_country_id) ".
                 "AND $company_id in (0, c.company_id) ".
                 "AND $agency_id in (0, c.agency_id) ".
-                "AND $employer_id in (0, c.employer_id) ".
+                //"AND $employer_id in (0, c.employer_id) ".
                 "AND $agency_type_id in (0, c.agency_type_id) ".
                 "AND $register_type_id in (0, c.register_type_id) ".
                 "AND $document_type_id in (0, c.document_type_id) ".
@@ -190,7 +190,7 @@ class Contact_model extends Model_base
             "LEFT JOIN contact rec on c.recruiter_id=rec.contact_id and rec.contact_type='Recruiter' ".
             "LEFT JOIN contact com on c.company_id=com.contact_id and com.contact_type='Company' ".
             "LEFT JOIN contact age on c.agency_id=age.contact_id and age.contact_type='Agency' ".
-            "LEFT JOIN contact emp on c.employer_id=emp.contact_id and emp.contact_type='Employer' ".
+            //"LEFT JOIN contact emp on c.employer_id=emp.contact_id and emp.contact_type='Employer' ".
             "LEFT JOIN location tol on c.to_country_id=tol.location_id and tol.location_type_id=1 ".
             "LEFT JOIN register_type ret on c.register_type_id=ret.register_type_id ".
             "LEFT JOIN document_type dot on c.document_type_id=dot.document_type_id ".
@@ -199,7 +199,7 @@ class Contact_model extends Model_base
             "AND $to_country_id in (0, c.to_country_id) ".
             "AND $company_id in (0, c.company_id) ".
             "AND $agency_id in (0, c.agency_id) ".
-            "AND $employer_id in (0, c.employer_id) ".
+            //"AND $employer_id in (0, c.employer_id) ".
             "AND $agency_type_id in (0, c.agency_type_id) ".
             "AND $register_type_id in (0, c.register_type_id) ".
             "AND $document_type_id in (0, c.document_type_id) ".
@@ -243,7 +243,7 @@ class Contact_model extends Model_base
         $to_country_id = isset($contact->to_country_id)? $contact->to_country_id:0;
         $company_id = isset($contact->company_id)? $contact->company_id:0;
         $agency_id = isset($contact->agency_id)? $contact->agency_id:0;
-        $employer_id = isset($contact->employer_id)? $contact->employer_id:0;
+        //$employer_id = isset($contact->employer_id)? $contact->employer_id:0;
         $agency_type_id = isset($contact->agency_type_id)? $contact->agency_type_id:0;
         $register_type_id = isset($contact->register_type_id)? $contact->register_type_id:0;
         $document_type_id = isset($contact->document_type_id)? $contact->document_type_id:0;
@@ -259,17 +259,18 @@ class Contact_model extends Model_base
         $search_option = isset($contact->search_option)? $contact->search_option : 'like';
 
 
-        $sql = "SELECT c.*, emp.contact_name employer_name, com.contact_name company_name, age.contact_name agency_name, ".
-            "age_add.address agency_address, emp_add.address employer_address, pob.address place_of_birth, ".
+        $sql = "SELECT c.*, com.contact_name company_name, age.contact_name agency_name, ".
+            "age_add.address agency_address, pob.address place_of_birth, ".
+            //"emp.contact_name employer_name, emp_add.address employer_address, ".
             "c_add.address contact_address ".
             "FROM contact c ".
             "LEFT JOIN agency_type agt on c.agency_type_id=agt.agency_type_id ".
             "LEFT JOIN contact rec on c.recruiter_id=rec.contact_id and rec.contact_type='Recruiter' ".
             "LEFT JOIN contact com on c.company_id=com.contact_id and com.contact_type='Company' ".
             "LEFT JOIN contact age on c.agency_id=age.contact_id and age.contact_type='Agency' ".
-            "LEFT JOIN contact emp on c.employer_id=emp.contact_id and emp.contact_type='Employer' ".
+            //"LEFT JOIN contact emp on c.employer_id=emp.contact_id and emp.contact_type='Employer' ".
             "LEFT JOIN contact_address age_add on age.contact_id=age_add.contact_id and age_add.address_key='contact' ".
-            "LEFT JOIN contact_address emp_add on emp.contact_id=emp_add.contact_id and emp_add.address_key='contact' ".
+            //"LEFT JOIN contact_address emp_add on emp.contact_id=emp_add.contact_id and emp_add.address_key='contact' ".
             "LEFT JOIN contact_address pob on c.contact_id=pob.contact_id and pob.address_key='pob' ".
             "LEFT JOIN contact_address c_add on c.contact_id=c_add.contact_id and c_add.address_key='contact' ".
             //"LEFT JOIN contact_address f_add on c.contact_id=f_add.contact_id and f_add.address_key='parent_address' ".
@@ -281,7 +282,7 @@ class Contact_model extends Model_base
             "AND $to_country_id in (0, c.to_country_id) ".
             "AND $company_id in (0, c.company_id) ".
             "AND $agency_id in (0, c.agency_id) ".
-            "AND $employer_id in (0, c.employer_id) ".
+            //"AND $employer_id in (0, c.employer_id) ".
             "AND $agency_type_id in (0, c.agency_type_id) ".
             "AND $register_type_id in (0, c.register_type_id) ".
             "AND $document_type_id in (0, c.document_type_id) ".
@@ -382,6 +383,16 @@ class Contact_model extends Model_base
         return $result && $result->num_rows()> 0;
     }
 
+    function is_exist_worker_code(Contact_model $contact)
+    {
+        $this->db->where('worker_code', $contact->worker_code);
+        $this->db->where('contact_id !=', $contact->contact_id);
+
+        $result =$this->db->get('contact');
+
+        return $result && $result->num_rows()> 0;
+    }
+
     function generate_code(Contact_model &$model)
     {
         if(isset($model->contact_code) && $model->contact_code!='') return $model->contact_code;
@@ -439,13 +450,33 @@ class Contact_model extends Model_base
         return $model->worker_code;
     }
 
+//    function check_data(Contact_model &$contact)
+//    {
+//        foreach($contact as $key=>$val)
+//        {
+//            if (strpos($key, '_id') !== false)
+//            {
+//                if(!isset($val) || $val=='' || $val==0 ) $contact->$key=null;
+//            }
+//            else if(strpos($key, 'date') !== false)
+//            {
+//                if(!isset($val) || $val=='' || $val=='0000-00-00' || $val=='00-00-0000' ) $contact->$key=null;
+//            }
+//        }
+//    }
+
     function add(Contact_model &$contact)
     {
         $this->generate_code($contact);
 
         if($this->is_exist_code($contact))
         {
-            return Message_result::error_message('Contact code is exist');
+            return Message_result::error_message($contact->contact_type.' Code is exist');
+        }
+
+        if($contact->contact_type=='Register' && isset($contact->worker_code) && $contact->worker_code!='' && $this->is_exist_worker_code($contact))
+        {
+            return Message_result::error_message('Worker Code is exist. Add::'.$contact->worker_code);
         }
 
         //for mysqli driver
@@ -455,6 +486,9 @@ class Contact_model extends Model_base
         $contact->created_by = $this->UserSession->user_id;
         $contact->modified_by = $this->UserSession->user_id;
 
+        $this->check_data($contact);
+
+        //var_dump($contact); echo "<br><br>";
         //echo $this->db->insert_string('contact', $contact); exit;
 
         $result=$this->db->insert('contact', $contact);
@@ -472,18 +506,26 @@ class Contact_model extends Model_base
 
     }
 
-    function update(Contact_model $contact)
+    function update(Contact_model &$contact)
     {
         $this->generate_code($contact);
 
         if($this->is_exist_code($contact))
         {
-            return Message_result::error_message('Contact name is exist');
+            return Message_result::error_message($contact->contact_type.' Code is exist');
+        }
+
+        if($contact->contact_type=='Register' && isset($contact->worker_code) && $contact->worker_code!='' && $this->is_exist_worker_code($contact))
+        {
+            return Message_result::error_message('Worker Code is exist. Add::'.$contact->worker_code);
         }
 
         $contact->modified_by = $this->UserSession->user_id;
         $contact->modified_date = Date('Y-m-d H:i:s', time());
 
+        $this->check_data($contact);
+
+        //var_dump($contact); echo "<br><br>";
         //echo $this->db->update_string('contact', $contact, "contact_id=$contact->contact_id"); exit;
 
         $this->db->where('contact_id', $contact->contact_id);

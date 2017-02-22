@@ -1,6 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Recruiter extends My_Controller {
+class Recruiter extends MY_Controller {
 
     function __construct()
     {
@@ -112,7 +112,7 @@ class Recruiter extends My_Controller {
             $this->form_validation->set_rules('contact_id', 'Recruiter ID', 'trim|required|greater_than[0]');
             $this->form_validation->set_rules('contact_name', 'Recruiter Name', 'trim|required|min_length[2]|max_length[100]');
             //$this->form_validation->set_rules('contact_code', 'Recruiter Code', 'trim|required|min_length[2]|max_length[100]');
-            $this->form_validation->set_rules('phone_number', 'Phone Number', 'trim|required|min_length[9]|max_length[100]');
+            //$this->form_validation->set_rules('phone_number', 'Phone Number', 'trim|required|min_length[9]|max_length[100]');
             $this->form_validation->set_rules('gender', 'Gender', 'trim|required|min_length[1]|max_length[1]');
             $this->form_validation->set_rules('country_id', 'Country', 'required|greater_than[0]');
             //$this->form_validation->set_rules('province_city_id', 'Province/City', 'required|greater_than[0]');
@@ -226,7 +226,7 @@ class Recruiter extends My_Controller {
         {
             $this->form_validation->set_rules('contact_name', 'Recruiter Name', 'trim|required|min_length[2]|max_length[100]');
             //$this->form_validation->set_rules('contact_code', 'Recruiter Code', 'trim|required|min_length[2]|max_length[100]');
-            $this->form_validation->set_rules('phone_number', 'Phone Number', 'trim|required|min_length[9]|max_length[100]');
+            //$this->form_validation->set_rules('phone_number', 'Phone Number', 'trim|required|min_length[9]|max_length[100]');
             $this->form_validation->set_rules('gender', 'Gender', 'trim|required|min_length[1]|max_length[1]');
             $this->form_validation->set_rules('country_id', 'Country', 'required|greater_than[0]');
             //$this->form_validation->set_rules('province_city_id', 'Province/City', 'required|greater_than[0]');

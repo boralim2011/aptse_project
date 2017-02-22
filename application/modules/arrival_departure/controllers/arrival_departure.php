@@ -1,6 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Arrival_departure extends My_Controller {
+class Arrival_departure extends MY_Controller {
 
     function __construct()
     {

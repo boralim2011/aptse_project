@@ -1,6 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Border_crossings extends My_Controller {
+class Border_crossings extends MY_Controller {
 
     function __construct()
     {

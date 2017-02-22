@@ -250,7 +250,7 @@ desired effect
                     <img src="<?php echo base_url();?>template/dist/img/logo.png" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>BIS Management System</p>
+                    <p>BISSIT</p>
                     <!-- Status -->
                     <a href="#"><i class="fa fa-anchor"></i> lead to success</a>
 

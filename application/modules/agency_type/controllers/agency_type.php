@@ -1,6 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Agency_type extends My_Controller {
+class Agency_type extends MY_Controller {
 
     function __construct()
     {

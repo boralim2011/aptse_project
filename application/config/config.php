@@ -27,6 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://localhost:8080/aptsec_project';
+//$config['base_url'] = 'http://www.aptsec168.com';
 //$config['base_url'] = 'http://www.bis-solution.com';
 
 /*
@@ -531,4 +532,13 @@ $config['rewrite_short_tags'] = FALSE;
 $config['proxy_ips'] = '';
 
 
-
+function __autoload($class)
+{
+    if (substr($class,0,3) !== 'CI_')
+    {
+        if (file_exists($file = APPPATH . 'core/' . $class . EXT))
+        {
+            include $file;
+        }
+    }
+}

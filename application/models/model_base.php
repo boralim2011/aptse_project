@@ -36,5 +36,19 @@ class Model_base extends CI_Model
         return sha1('P@ssw0rd'.$password);
     }
 
+    function check_data(Model_base &$model)
+    {
+        foreach($model as $key=>$val)
+        {
+            if (strpos($key, '_id') !== false)
+            {
+                if(!isset($val) || $val=='' || $val==0 ) $model->$key=null;
+            }
+            else if(strpos($key, 'date') !== false)
+            {
+                if(!isset($val) || $val=='' || $val=='0000-00-00' || $val=='00-00-0000' ) $model->$key=null;
+            }
+        }
+    }
 
 }

@@ -153,7 +153,7 @@
                     <select id="register_key" name="register_key" class="form-control select2" data-placeholder="All"  style="width: 100%;">
                         <option value="" <?php echo isset($register_key) && $register_key=="" ? 'selected="selected"':'';?> >All</option>
                         <?php
-                        for($key=1; $key<10; $key++){
+                        for($key=1; $key<100; $key++){
                             ?>
                             <option value="<?php echo $key;?>" <?php echo isset($register_key) && $register_key==$key? 'selected="selected"':'';?> ><?php echo $key;?></option>
                         <?php

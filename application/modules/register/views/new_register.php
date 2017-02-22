@@ -478,7 +478,7 @@
                             <label>List No</label>
                             <select id="register_key" name="register_key" class="form-control select2" data-placeholder=""  style="width: 100%;">
                                 <?php
-                                for($key=1; $key<10; $key++){
+                                for($key=1; $key<100; $key++){
                                     ?>
                                     <option value="<?php echo $key;?>" <?php echo isset($contact->register_key) && $contact->register_key==$key? 'selected="selected"':'';?> ><?php echo $key;?></option>
                                 <?php
@@ -1047,7 +1047,7 @@
                 },
                 success: function(data, status, xhr)
                 {
-                    //alert(data.worker_code);
+                    //alert(data);
 
                     if(data==521){
                         go_to_login();
@@ -1105,6 +1105,7 @@
                 success: function(data, status, xhr)
                 {
                     //alert(data);
+                    //$('#Submited-Result').html(data);
 
                     if(data==521){
                         go_to_login();
@@ -1137,6 +1138,8 @@
     });
 
 </script>
+
+<div id="Submited-Result"></div>
 
 <?php $this->load->view('contact_address_location'); ?>
 

@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Login extends My_Controller
+class Login extends MY_Controller
 {
     function __construct()
     {
