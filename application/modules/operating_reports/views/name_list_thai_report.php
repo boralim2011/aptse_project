@@ -1,6 +1,6 @@
 
 <div class="report">
-    <br><br>
+    <p style="display: block; height: 7cm;">&nbsp;</p>
     <h4 class="text-center" style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold;">
         Name List of Cambodian Workers<br/>
         Working Place : <?php echo isset($employer_name)? $employer_name:"";?><br/>
