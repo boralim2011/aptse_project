@@ -262,7 +262,7 @@ class Contact_model extends Model_base
         $sql = "SELECT c.*, com.contact_name company_name, age.contact_name agency_name, ".
             "age_add.address agency_address, pob.address place_of_birth, ".
             //"emp.contact_name employer_name, emp_add.address employer_address, ".
-            "c_add.address contact_address ".
+            "c_add.address contact_address, rec.contact_name recruiter_name ".
             "FROM contact c ".
             "LEFT JOIN agency_type agt on c.agency_type_id=agt.agency_type_id ".
             "LEFT JOIN contact rec on c.recruiter_id=rec.contact_id and rec.contact_type='Recruiter' ".
