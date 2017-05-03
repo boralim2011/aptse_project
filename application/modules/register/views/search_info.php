@@ -168,7 +168,7 @@
                     <label>Search By</label>
                     <select id="search_by" name="search_by" class="form-control select2" data-placeholder="--Select Agency--"  style="width: 100%;">
                         <option value="contact_name" <?php echo isset($search_by) && $search_by=='contact_name' ? 'selected="selected"':'';?> >Register Name</option>
-                        <option value="register_code" <?php echo isset($search_by) && $search_by=='register_code' ? 'selected="selected"':'';?> >Register Code</option>
+                        <option value="contact_code" <?php echo isset($search_by) && $search_by=='contact_code' ? 'selected="selected"':'';?> >Register Code</option>
                         <option value="worker_code" <?php echo isset($search_by) && $search_by=='worker_code' ? 'selected="selected"':'';?> >Worker Code</option>
                         <option value="contact_name_kh" <?php echo isset($search_by) && $search_by=='contact_name_kh' ? 'selected="selected"':'';?> >Register Name (Khmer)</option>
                         <option value="first_name" <?php echo isset($search_by) && $search_by=='first_name' ? 'selected="selected"':'';?> >First Name</option>

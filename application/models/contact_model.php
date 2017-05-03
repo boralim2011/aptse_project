@@ -401,6 +401,12 @@ class Contact_model extends Model_base
         $prefix = strtoupper(substr($model->contact_type, 0, 3));
         $prefix = $prefix==""?"": $prefix."-";
         $digits = "00001";
+
+        if($model->contact_type=='Register'){
+            $prefix = "THAI-";
+            $digits = "0001";
+        }
+
         $code = $prefix.$digits;
 
         $sql = "select contact_code from contact where contact_code LIKE '$prefix%' order by contact_code desc limit 1";
@@ -474,10 +480,14 @@ class Contact_model extends Model_base
             return Message_result::error_message($contact->contact_type.' Code is exist');
         }
 
+        if($contact->worker_code=="") $contact->worker_code=$contact->contact_code;
+
         if($contact->contact_type=='Register' && isset($contact->worker_code) && $contact->worker_code!='' && $this->is_exist_worker_code($contact))
         {
             return Message_result::error_message('Worker Code is exist. Add::'.$contact->worker_code);
         }
+
+
 
         //for mysqli driver
         unset($contact->contact_id);
@@ -514,6 +524,8 @@ class Contact_model extends Model_base
         {
             return Message_result::error_message($contact->contact_type.' Code is exist');
         }
+
+        if($contact->worker_code=="") $contact->worker_code=$contact->contact_code;
 
         if($contact->contact_type=='Register' && isset($contact->worker_code) && $contact->worker_code!='' && $this->is_exist_worker_code($contact))
         {

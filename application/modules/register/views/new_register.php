@@ -54,7 +54,7 @@
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
                             <label>Register Code</label>
-                            <input type="text" class="form-control" id="contact_code" name="contact_code" placeholder="Enter register code" value="<?php echo $contact->contact_code; ?>"  readonly="readonly">
+                            <input type="text" class="form-control" id="contact_code" name="contact_code" placeholder="Enter register code" value="<?php echo $contact->contact_code; ?>"  >
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
                             <label>First Name</label>
