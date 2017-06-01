@@ -92,13 +92,20 @@
                                 <label style="margin-right: 30px;"><input type="radio" class="minimal form-control" id="female" name="gender" value="F" <?php if($contact->gender=='F') echo 'checked="checked"';?>  > Female</label>
                             </div>
                         </div>
-                        <div class="form-group col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                        <div class="form-group col-xs-12 col-sm-12 col-md-5 col-lg-5">
                             <label><span class="text-red">*</span> Marital Status</label>
                             <div style="height: 34px;">
                                 <label style="margin-right: 30px;"><input type="radio" class="minimal form-control" id="single" name="marital_status" value="Single" <?php if($contact->marital_status=='Single') echo 'checked="checked"';?>  > Single</label>
                                 <label style="margin-right: 30px;"><input type="radio" class="minimal form-control" id="married" name="marital_status" value="Married" <?php if($contact->marital_status=='Married') echo 'checked="checked"';?>  > Married</label>
                                 <label style="margin-right: 30px;"><input type="radio" class="minimal form-control" id="widow" name="marital_status" value="Widow" <?php if($contact->marital_status=='Widow') echo 'checked="checked"';?>  > Widow</label>
                                 <label style="margin-right: 30px;"><input type="radio" class="minimal form-control" id="separated" name="marital_status" value="Separated" <?php if($contact->marital_status=='Separated') echo 'checked="checked"';?>  > Separated</label>
+                            </div>
+                        </div>
+                        <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                            <label><span class="text-red"></span> Do Passport by</label>
+                            <div style="height: 34px;">
+                                <label style="margin-right: 30px;"><input type="radio" class="minimal form-control" id="personal" name="do_pp_by" value="Personal" <?php if($contact->do_pp_by=='Personal') echo 'checked="checked"';?>  > Personal</label>
+                                <label style="margin-right: 30px;"><input type="radio" class="minimal form-control" id="labor_card" name="do_pp_by" value="Labor Card" <?php if($contact->do_pp_by=='Labor Card') echo 'checked="checked"';?>  > Labor Card</label>
                             </div>
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">

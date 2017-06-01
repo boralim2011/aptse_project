@@ -45,7 +45,7 @@
                                     <td></td>
                                     <td><?php echo isset($row->contact_name)? $row->contact_name:"";?></td>
                                     <td><?php echo isset($row->contact_name_kh)? $row->contact_name_kh:"";?></td>
-                                    <td><?php echo isset($row->worker_code)? $row->worker_code:"";?></td>
+                                    <td><?php echo isset($row->contact_code)? $row->contact_code:"";?></td>
                                     <td><?php echo isset($row->register_date)? $row->register_date:"";?></td>
                                     <td>
                                         <a href="#register/edit/<?php echo $row->contact_id;?>"  class="inline-button" data-toggle="tooltip" title="Edit"> <i class="fa fa-pencil text-orange"></i> </a>
@@ -187,30 +187,32 @@
             post_search();
         });
 
-        function post_search( page=1)
-        {
-            var count = $("#display").val();
-            //var search = $("#search").val();
-            //var search_by = $("#search_by").val();
 
-            var url = "<?php echo base_url()?>register/manage_register";
-
-            var data = $("#search-form").serializeArray();
-            data.push({name:'submit', value: 1});
-            data.push({name:'display', value: count?count:10});
-
-            $.post(url, data , function(data, status, xhr)
-            {
-                if (data == 521) {
-                    go_to_login();
-                }
-                else {
-                    $("#display-content").empty().append(data);
-                }
-            });
-
-        }
     });
+
+    function post_search( page=1)
+    {
+        var count = $("#display").val();
+        //var search = $("#search").val();
+        //var search_by = $("#search_by").val();
+
+        var url = "<?php echo base_url()?>register/manage_register";
+
+        var data = $("#search-form").serializeArray();
+        data.push({name:'submit', value: 1});
+        data.push({name:'display', value: count?count:10});
+
+        $.post(url, data , function(data, status, xhr)
+        {
+            if (data == 521) {
+                go_to_login();
+            }
+            else {
+                $("#display-content").empty().append(data);
+            }
+        });
+
+    }
 
 </script>
 
@@ -259,6 +261,7 @@
                             if(data.success===true)
                             {
                                 //if ($(".btn-refresh").length) $(".btn-refresh").trigger('click');
+                                post_search();
                             }
                             show_message(data.message, $("#message"));
                         }

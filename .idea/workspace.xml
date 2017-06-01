@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25dbe4a2-eb6c-41e9-905c-f34138a5344f" name="Default" comment="">
+      <change type="MOVED" beforePath="C:\wamp\www\aptsec_project\application\models\contact_model.php" afterPath="$PROJECT_DIR$/application/models/Contact_model.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/register/views/manage_register.php" afterPath="$PROJECT_DIR$/application/modules/register/views/manage_register.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/operating_reports/views/manage_reports.php" afterPath="$PROJECT_DIR$/application/modules/operating_reports/views/manage_reports.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/register/views/new_register.php" afterPath="$PROJECT_DIR$/application/modules/register/views/new_register.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/operating_reports/views/register_list_thai_report.php" afterPath="$PROJECT_DIR$/application/modules/operating_reports/views/register_list_thai_report.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/register/views/search_info.php" afterPath="$PROJECT_DIR$/application/modules/register/views/search_info.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -39,8 +42,18 @@
       <file leaf-file-name="Operating_reports.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/modules/operating_reports/controllers/Operating_reports.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.5" vertical-offset="918" max-vertical-offset="2907">
-              <caret line="67" column="51" selection-start-line="67" selection-start-column="40" selection-end-line="67" selection-end-column="51" />
+            <state vertical-scroll-proportion="-13.076923" vertical-offset="357" max-vertical-offset="2907">
+              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="passport_issue_report.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/modules/operating_reports/views/passport_issue_report.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.60943395" vertical-offset="0" max-vertical-offset="1343">
+              <caret line="19" column="53" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -49,8 +62,8 @@
       <file leaf-file-name="name_list_thai_report.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/modules/operating_reports/views/name_list_thai_report.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="1377">
-              <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+            <state vertical-scroll-proportion="-12.423077" vertical-offset="17" max-vertical-offset="1377">
+              <caret line="20" column="57" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -59,23 +72,23 @@
       <file leaf-file-name="register_list_thai_report.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/modules/operating_reports/views/register_list_thai_report.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.8461537" vertical-offset="306" max-vertical-offset="1309">
-              <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+            <state vertical-scroll-proportion="-8.5" vertical-offset="306" max-vertical-offset="1343">
+              <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="manage_register.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="manage_register.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/modules/register/views/manage_register.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8981132" vertical-offset="3876" max-vertical-offset="4913">
-              <caret line="256" column="25" selection-start-line="256" selection-start-column="25" selection-end-line="256" selection-end-column="25" />
+            <state vertical-scroll-proportion="-87.61539" vertical-offset="0" max-vertical-offset="4964">
+              <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
               <folding>
-                <marker date="1493803898750" expanded="true" signature="7050:7065" placeholder="..." />
-                <marker date="1493803898750" expanded="true" signature="7130:7145" placeholder="..." />
-                <marker date="1493803898750" expanded="true" signature="7206:7221" placeholder="..." />
-                <marker date="1493803898750" expanded="true" signature="7281:7296" placeholder="..." />
+                <marker date="1493877072166" expanded="true" signature="7052:7067" placeholder="..." />
+                <marker date="1493877072166" expanded="true" signature="7132:7147" placeholder="..." />
+                <marker date="1493877072166" expanded="true" signature="7208:7223" placeholder="..." />
+                <marker date="1493877072166" expanded="true" signature="7283:7298" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -84,9 +97,14 @@
       <file leaf-file-name="search_info.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/modules/register/views/search_info.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-40.53846" vertical-offset="1955" max-vertical-offset="4335">
-              <caret line="177" column="106" selection-start-line="177" selection-start-column="96" selection-end-line="177" selection-end-column="106" />
-              <folding />
+            <state vertical-scroll-proportion="-25.5" vertical-offset="2108" max-vertical-offset="4471">
+              <caret line="163" column="0" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#8;n#div#1;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#0;n#div#8;n#div#1;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#1;n#div#0;n#div#8;n#div#1;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,8 +112,8 @@
       <file leaf-file-name="Register.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/modules/register/controllers/Register.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="68.65385" vertical-offset="5576" max-vertical-offset="11526">
-              <caret line="223" column="0" selection-start-line="223" selection-start-column="0" selection-end-line="223" selection-end-column="0" />
+            <state vertical-scroll-proportion="19.615385" vertical-offset="986" max-vertical-offset="11526">
+              <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -104,19 +122,22 @@
       <file leaf-file-name="new_register.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/modules/register/views/new_register.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7692308" vertical-offset="632" max-vertical-offset="19686">
-              <caret line="36" column="37" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mfa_list_thai_director_report.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/modules/operating_reports/views/mfa_list_thai_director_report.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1544" max-vertical-offset="2074">
-              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="-11.884615" vertical-offset="1544" max-vertical-offset="19805">
+              <caret line="109" column="30" selection-start-line="103" selection-start-column="22" selection-end-line="109" selection-end-column="30" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#section#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#10;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#section#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#0;n#div#10;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#section#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#1;n#div#0;n#div#10;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#section#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#11;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#section#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#0;n#div#11;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#section#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#1;n#div#0;n#div#11;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#section#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#2;n#div#0;n#div#11;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#section#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#3;n#div#0;n#div#11;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#section#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#12;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#section#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#0;n#div#12;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#section#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#1;n#div#0;n#div#12;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#section#1;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -124,22 +145,22 @@
       <file leaf-file-name="Contact_model.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/models/Contact_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.923077" vertical-offset="8005" max-vertical-offset="10149">
-              <caret line="483" column="0" selection-start-line="483" selection-start-column="0" selection-end-line="483" selection-end-column="0" />
+            <state vertical-scroll-proportion="-9.807693" vertical-offset="918" max-vertical-offset="10268">
+              <caret line="69" column="31" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="31" />
               <folding>
-                <marker date="1493802241865" expanded="true" signature="18575:18677" placeholder="select conta..contact..." />
-                <marker date="1493802241865" expanded="true" signature="19491:19590" placeholder="select worke..contact..." />
-                <marker date="1493802241865" expanded="true" signature="23781:23940" placeholder="select conta..." />
+                <marker date="1496354361971" expanded="true" signature="18902:19004" placeholder="select conta..contact..." />
+                <marker date="1496354361971" expanded="true" signature="19818:19917" placeholder="select worke..contact..." />
+                <marker date="1496354361971" expanded="true" signature="24111:24270" placeholder="select conta..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Register_model.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/Register_model.php">
+      <file leaf-file-name="manage_reports.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/modules/operating_reports/views/manage_reports.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4697" max-vertical-offset="6154">
-              <caret line="216" column="5" selection-start-line="216" selection-start-column="5" selection-end-line="216" selection-end-column="5" />
+            <state vertical-scroll-proportion="-12.423077" vertical-offset="153" max-vertical-offset="2584">
+              <caret line="28" column="148" selection-start-line="28" selection-start-column="123" selection-end-line="28" selection-end-column="148" />
               <folding />
             </state>
           </provider>
@@ -153,7 +174,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/config/constants.php" />
         <option value="$PROJECT_DIR$/application/views/home.php" />
         <option value="$PROJECT_DIR$/application/modules/user/views/manage_user.php" />
         <option value="$PROJECT_DIR$/application/modules/user/views/view_user.php" />
@@ -190,20 +210,21 @@
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/application/config/database.php" />
         <option value="$PROJECT_DIR$/application/modules/recruiter/controllers/Recruiter.php" />
-        <option value="$PROJECT_DIR$/application/modules/register/controllers/Register.php" />
-        <option value="$PROJECT_DIR$/application/modules/operating_reports/controllers/Operating_reports.php" />
         <option value="$PROJECT_DIR$/application/models/Model_base.php" />
         <option value="$PROJECT_DIR$/application/modules/user/views/change_password.php" />
         <option value="$PROJECT_DIR$/application/views/login.php" />
         <option value="$PROJECT_DIR$/application/views/reset_password.php" />
         <option value="$PROJECT_DIR$/application/views/template.php" />
-        <option value="$PROJECT_DIR$/application/modules/operating_reports/views/name_list_thai_report.php" />
-        <option value="$PROJECT_DIR$/application/modules/operating_reports/views/manage_reports.php" />
-        <option value="$PROJECT_DIR$/application/modules/operating_reports/views/register_list_thai_report.php" />
+        <option value="$PROJECT_DIR$/application/modules/register/views/manage_register.php" />
         <option value="$PROJECT_DIR$/application/modules/register/views/new_register.php" />
         <option value="$PROJECT_DIR$/application/modules/register/views/search_info.php" />
+        <option value="$PROJECT_DIR$/application/modules/register/controllers/Register.php" />
+        <option value="$PROJECT_DIR$/application/modules/operating_reports/views/name_list_thai_report.php" />
+        <option value="$PROJECT_DIR$/application/modules/operating_reports/views/register_list_thai_report.php" />
         <option value="$PROJECT_DIR$/application/models/Contact_model.php" />
-        <option value="$PROJECT_DIR$/application/modules/register/views/manage_register.php" />
+        <option value="$PROJECT_DIR$/application/modules/operating_reports/views/manage_reports.php" />
+        <option value="$PROJECT_DIR$/application/modules/operating_reports/controllers/Operating_reports.php" />
+        <option value="$PROJECT_DIR$/application/modules/operating_reports/views/passport_issue_report.php" />
       </list>
     </option>
   </component>
@@ -238,7 +259,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -267,7 +287,47 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aptsec_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aptsec_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugins" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aptsec_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aptsec_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugins" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="datatables" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -282,107 +342,12 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="aptsec_project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="aptsec_project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="register" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="aptsec_project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="aptsec_project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="register" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="aptsec_project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="aptsec_project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="register" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="aptsec_project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="aptsec_project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -432,7 +397,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="728" extended-state="0" />
+    <frame x="0" y="0" width="1366" height="728" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -441,7 +406,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284839" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25344563" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.262634" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -477,13 +442,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/modules/user/controllers/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.923077" vertical-offset="644" max-vertical-offset="7922">
-          <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="56" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/modules/company/views/new_company.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.846154" vertical-offset="3279" max-vertical-offset="4267">
@@ -736,19 +694,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/operating_reports/views/manage_reports.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="2567">
-          <caret line="28" column="148" selection-start-line="28" selection-start-column="148" selection-end-line="28" selection-end-column="148" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/modules/operating_reports/views/khmer_arrival_departure.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2020" max-vertical-offset="2550">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -756,7 +705,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1544" max-vertical-offset="2074">
           <caret line="30" column="165" selection-start-line="30" selection-start-column="127" selection-end-line="30" selection-end-column="172" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -764,15 +712,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1544" max-vertical-offset="2074">
           <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/operating_reports/views/name_list_thai_report.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="1377">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -784,76 +723,118 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/operating_reports/controllers/Operating_reports.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.5" vertical-offset="918" max-vertical-offset="2907">
-          <caret line="67" column="51" selection-start-line="67" selection-start-column="40" selection-end-line="67" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25660378" vertical-offset="51" max-vertical-offset="4964">
-          <caret line="46" column="2" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/operating_reports/views/register_list_thai_report.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537" vertical-offset="306" max-vertical-offset="1309">
-          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Contact_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.923077" vertical-offset="8005" max-vertical-offset="10149">
-          <caret line="483" column="0" selection-start-line="483" selection-start-column="0" selection-end-line="483" selection-end-column="0" />
-          <folding>
-            <marker date="1493802241865" expanded="true" signature="18575:18677" placeholder="select conta..contact..." />
-            <marker date="1493802241865" expanded="true" signature="19491:19590" placeholder="select worke..contact..." />
-            <marker date="1493802241865" expanded="true" signature="23781:23940" placeholder="select conta..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/register/controllers/Register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="68.65385" vertical-offset="5576" max-vertical-offset="11526">
-          <caret line="223" column="0" selection-start-line="223" selection-start-column="0" selection-end-line="223" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.34438306" vertical-offset="51" max-vertical-offset="4964">
+          <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/modules/register/views/new_register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7692308" vertical-offset="632" max-vertical-offset="19686">
-          <caret line="36" column="37" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/register/views/search_info.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-40.53846" vertical-offset="1955" max-vertical-offset="4335">
-          <caret line="177" column="106" selection-start-line="177" selection-start-column="96" selection-end-line="177" selection-end-column="106" />
-          <folding />
+        <state vertical-scroll-proportion="-11.884615" vertical-offset="1544" max-vertical-offset="19805">
+          <caret line="109" column="30" selection-start-line="103" selection-start-column="22" selection-end-line="109" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#10;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#div#10;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#1;n#div#0;n#div#10;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#11;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#div#11;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#1;n#div#0;n#div#11;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#2;n#div#0;n#div#11;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#3;n#div#0;n#div#11;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#12;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#div#12;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#1;n#div#0;n#div#12;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#section#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/modules/register/views/manage_register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8981132" vertical-offset="3876" max-vertical-offset="4913">
-          <caret line="256" column="25" selection-start-line="256" selection-start-column="25" selection-end-line="256" selection-end-column="25" />
+        <state vertical-scroll-proportion="-87.61539" vertical-offset="0" max-vertical-offset="4964">
+          <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
           <folding>
-            <marker date="1493803898750" expanded="true" signature="7050:7065" placeholder="..." />
-            <marker date="1493803898750" expanded="true" signature="7130:7145" placeholder="..." />
-            <marker date="1493803898750" expanded="true" signature="7206:7221" placeholder="..." />
-            <marker date="1493803898750" expanded="true" signature="7281:7296" placeholder="..." />
+            <marker date="1493877072166" expanded="true" signature="7052:7067" placeholder="..." />
+            <marker date="1493877072166" expanded="true" signature="7132:7147" placeholder="..." />
+            <marker date="1493877072166" expanded="true" signature="7208:7223" placeholder="..." />
+            <marker date="1493877072166" expanded="true" signature="7283:7298" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/register/views/search_info.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-25.5" vertical-offset="2108" max-vertical-offset="4471">
+          <caret line="163" column="0" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#8;n#div#1;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#div#8;n#div#1;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#1;n#div#0;n#div#8;n#div#1;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/register/controllers/Register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="19.615385" vertical-offset="986" max-vertical-offset="11526">
+          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/operating_reports/views/name_list_thai_report.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.423077" vertical-offset="17" max-vertical-offset="1377">
+          <caret line="20" column="57" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/operating_reports/views/register_list_thai_report.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.5" vertical-offset="306" max-vertical-offset="1343">
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/operating_reports/views/manage_reports.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.423077" vertical-offset="153" max-vertical-offset="2584">
+          <caret line="28" column="148" selection-start-line="28" selection-start-column="123" selection-end-line="28" selection-end-column="148" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/operating_reports/controllers/Operating_reports.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.076923" vertical-offset="357" max-vertical-offset="2907">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Contact_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693" vertical-offset="918" max-vertical-offset="10268">
+          <caret line="69" column="31" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="31" />
+          <folding>
+            <marker date="1496354361971" expanded="true" signature="18902:19004" placeholder="select conta..contact..." />
+            <marker date="1496354361971" expanded="true" signature="19818:19917" placeholder="select worke..contact..." />
+            <marker date="1496354361971" expanded="true" signature="24111:24270" placeholder="select conta..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/operating_reports/views/passport_issue_report.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.60943395" vertical-offset="0" max-vertical-offset="1343">
+          <caret line="19" column="53" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
+          <folding />
         </state>
       </provider>
     </entry>

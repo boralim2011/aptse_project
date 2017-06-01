@@ -161,6 +161,14 @@
                         ?>
                     </select>
                 </div>
+
+                <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <label><span class="text-red"></span> Do Passport by</label>
+                    <div style="height: 34px;">
+                        <label style="margin-right: 30px;"><input type="radio" class="minimal form-control" id="personal" name="do_pp_by" value="Personal" <?php if(isset($do_pp_by) && $do_pp_by=='Personal') echo 'checked="checked"';?>  > Personal</label>
+                        <label style="margin-right: 30px;"><input type="radio" class="minimal form-control" id="labor_card" name="do_pp_by" value="Labor Card" <?php if(isset($do_pp_by) && $do_pp_by=='Labor Card') echo 'checked="checked"';?>  > Labor Card</label>
+                    </div>
+                </div>
             </div>
 
             <div class="row">

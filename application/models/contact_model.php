@@ -108,6 +108,8 @@ class Contact_model extends Model_base
     public $register_key="";
     public $ocwc_no;
 
+    public $do_pp_by;
+
     function get_list(Contact_model $contact)
     {
         $type = isset($contact->contact_type)? $contact->contact_type: "Contact";
@@ -147,6 +149,7 @@ class Contact_model extends Model_base
         $recruiter_id = isset($contact->recruiter_id)? $contact->recruiter_id:0;
         $service_type_id = isset($contact->service_type_id)? $contact->service_type_id:0;
         $register_key = isset($contact->register_key) ? $contact->register_key: "";
+        $do_pp_by = isset($contact->do_pp_by)? $contact->do_pp_by : "";
 
         $all_date = isset($contact->all_date) && $contact->all_date==1? 1 : 0;
         $date_of = isset($contact->date_of)? $contact->date_of : "";
@@ -169,6 +172,7 @@ class Contact_model extends Model_base
                 "LEFT JOIN document_type dot on c.document_type_id=dot.document_type_id ".
                 "LEFT JOIN service_type svt on c.service_type_id=svt.service_type_id ".
                 "WHERE '$contact_type' in ('', c.contact_type) ".
+                "AND '$do_pp_by' in ('', c.do_pp_by) ".
                 "AND $to_country_id in (0, c.to_country_id) ".
                 "AND $company_id in (0, c.company_id) ".
                 "AND $agency_id in (0, c.agency_id) ".
@@ -196,6 +200,7 @@ class Contact_model extends Model_base
             "LEFT JOIN document_type dot on c.document_type_id=dot.document_type_id ".
             "LEFT JOIN service_type svt on c.service_type_id=svt.service_type_id ".
             "WHERE '$contact_type' in ('', c.contact_type) ".
+            "AND '$do_pp_by' in ('', c.do_pp_by) ".
             "AND $to_country_id in (0, c.to_country_id) ".
             "AND $company_id in (0, c.company_id) ".
             "AND $agency_id in (0, c.agency_id) ".
@@ -250,6 +255,7 @@ class Contact_model extends Model_base
         $recruiter_id = isset($contact->recruiter_id)? $contact->recruiter_id:0;
         $service_type_id = isset($contact->service_type_id)? $contact->service_type_id:0;
         $register_key = isset($contact->register_key) ? $contact->register_key: "";
+        $do_pp_by = isset($contact->do_pp_by)? $contact->do_pp_by : "";
 
         $all_date = isset($contact->all_date) && $contact->all_date==1? 1 : 0;
         $date_of = isset($contact->date_of)? $contact->date_of : "";
@@ -279,6 +285,7 @@ class Contact_model extends Model_base
             "LEFT JOIN document_type dot on c.document_type_id=dot.document_type_id ".
             "LEFT JOIN service_type svt on c.service_type_id=svt.service_type_id ".
             "WHERE '$contact_type' in ('', c.contact_type) ".
+            "AND '$do_pp_by' in ('', c.do_pp_by) ".
             "AND $to_country_id in (0, c.to_country_id) ".
             "AND $company_id in (0, c.company_id) ".
             "AND $agency_id in (0, c.agency_id) ".
@@ -537,8 +544,8 @@ class Contact_model extends Model_base
 
         $this->check_data($contact);
 
-        //var_dump($contact); echo "<br><br>";
-        //echo $this->db->update_string('contact', $contact, "contact_id=$contact->contact_id"); exit;
+        //$sql = $this->db->update_string('contact', $contact, "contact_id=$contact->contact_id");
+        //return Message_result::error_message($sql);
 
         $this->db->where('contact_id', $contact->contact_id);
         $result = $this->db->update('contact', $contact);

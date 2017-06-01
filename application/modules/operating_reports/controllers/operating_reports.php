@@ -38,7 +38,7 @@ class Operating_reports extends MY_Controller {
         $to_date = isset($_POST['to_date'])? $_POST['to_date']: Date('Y-m-d');
         $date_of = isset( $_POST['date_of'])?  $_POST['date_of']: "register_date";
 
-        $report_name = isset($_POST['report_name'])?$_POST['report_name']: "mfa_list_thai_report";
+        $report_name = isset($_POST['report_name'])?$_POST['report_name']: "register_list_thai_report";
 
         $data['registers'] = array();
 
