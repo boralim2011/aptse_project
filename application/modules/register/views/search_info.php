@@ -167,6 +167,7 @@
                     <div style="height: 34px;">
                         <label style="margin-right: 30px;"><input type="radio" class="minimal form-control" id="personal" name="do_pp_by" value="Personal" <?php if(isset($do_pp_by) && $do_pp_by=='Personal') echo 'checked="checked"';?>  > Personal</label>
                         <label style="margin-right: 30px;"><input type="radio" class="minimal form-control" id="labor_card" name="do_pp_by" value="Labor Card" <?php if(isset($do_pp_by) && $do_pp_by=='Labor Card') echo 'checked="checked"';?>  > Labor Card</label>
+                        <label style="margin-right: 30px;"><input type="radio" class="minimal form-control" id="labor_card" name="do_pp_by" value="" <?php if(!isset($do_pp_by) || $do_pp_by=='') echo 'checked="checked"';?>  > All</label>
                     </div>
                 </div>
             </div>
