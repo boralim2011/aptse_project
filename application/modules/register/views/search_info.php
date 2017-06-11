@@ -25,10 +25,10 @@
                     </select>
                 </div>
                 <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                    <label>From Date</label>
-                    <div class="input-group">
-                        <div class="input-group-addon">
-                            <i class="fa fa-calendar"></i>
+                                <label>From Date</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
                         </div>
                         <input type="text" class="form-control datepicker" name="from_date" id="from_date" value="<?php echo isset($from_date)?$from_date:'' ;?>" <?php if(isset($all_date) && $all_date=='1') echo 'disabled="disabled"';?> >
                     </div>

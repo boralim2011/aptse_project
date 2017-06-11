@@ -26,7 +26,7 @@ class Operating_reports extends MY_Controller {
 
     function show_report($view_country=3)
     {
-        //if(!isset($_POST['ajax']) && !isset($_POST['search'])) {  $this->show_404();return; }
+        if(!isset($_POST['ajax']) && !isset($_POST['search'])) {  $this->show_404();return; }
 
         $search = isset($_POST['search'])?$_POST['search']:'';
         //$page = isset($_POST['page']) ? $_POST['page']: 1;
